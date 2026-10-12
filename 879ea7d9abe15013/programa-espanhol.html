@@ -1,0 +1,449 @@
+<!doctype html><html lang="pt-BR"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1"><meta name="color-scheme" content="light dark"><title>Programa de Espanhol</title><style>body{margin:0;background:#f7f5f0;color:#1d2330;font:16px/1.55 -apple-system,system-ui,sans-serif}main{max-width:760px;margin:0 auto;padding:24px 18px 60px}h1{font-size:26px;border-bottom:3px solid #c2410c;padding-bottom:8px}h2{color:#c2410c;margin-top:32px}table{border-collapse:collapse;width:100%;font-size:14px;display:block;overflow-x:auto}td,th{border:1px solid #e6e1d6;padding:6px 8px;vertical-align:top}th{background:#efeae0}blockquote{border-left:4px solid #c2410c;margin:12px 0;padding:6px 14px;background:#fff}a{color:#c2410c}code{background:#efeae0;padding:1px 4px;border-radius:4px}@media(prefers-color-scheme:dark){body{background:#12151c;color:#eef0f4}th{background:#222835}td,th{border-color:#2c3340}blockquote{background:#1b2029}code{background:#222835}}</style></head><body><main><h1>Programa de espanhol – A1 → B2 em 48 semanas</h1>
+<p>Curso completo que substitui o Duolingo: uma unidade por semana, uma lição interativa por dia (<code>Lições interativas/licoes/ES-NN.json</code> → HTML pelo <code>motor.py</code>) e os cartões da semana em <code>decks/</code>. Plano, recursos e rotina: Plano · grade de horários: Semana-tipo · erros: Erros.</p>
+<blockquote>
+<blockquote>
+<p>A sequência gramatical é a do tutor (ordem usual de cursos A1–B2), não a cópia de um currículo oficial: nenhuma obra de referência foi aberta para montá-la. As metas CEFR por trimestre abaixo são proposta – <code>[CONFERIR]</code> com Vinicius, como no Plano.</p>
+</blockquote>
+</blockquote>
+<h2>Como a semana vira lição</h2>
+<ul>
+<li><strong>Uma lição por dia, 20–25 min de app + o input externo do dia</strong> (R1: cabe nos 30 min ou é cortada). Número da lição: semana <em>n</em>, dia <em>d</em> (seg = 1 … dom = 7) → <code>ES-</code> 7(<em>n</em>−1)+<em>d</em> (semana 1 = ES-01 a ES-07; semana 2 = ES-08 a ES-14 …).</li>
+<li><strong>Grade (Semana-tipo):</strong> seg base gramatical (ponto novo + exercícios) · ter escuta (lição + podcast) · qua escrita (lição + texto de 60–100 palavras para <code>/corrigir</code>) · qui escuta · sex fala (lição + 5 perguntas gravadas, correção ao fim) · sáb vídeo/escuta · dom revisão SRS da semana inteira.</li>
+<li><strong>Revisão espaçada dentro das lições:</strong> cada lição repete vocabulário e estruturas das 2–6 anteriores; o domingo revisa a semana; a última semana de cada nível revisa o nível.</li>
+<li><strong>Cartões:</strong> <code>decks/AAAA-MM-DD_semanaN.tsv</code> (data da segunda-feira), só com o que apareceu nas lições ou nos erros dele (R2). Anki ainda não instalado (<code>[CONFERIR]</code>, ver Plano).</li>
+<li><strong>Erros:</strong> o que ele errar no app (o resultado copiado no fim da lição) e na produção corrigida volta como exercício na lição seguinte; padrão repetido vai para <code>Erros.md</code>.</li>
+</ul>
+<h2>Níveis, trimestres e checkpoints</h2>
+<table>
+<thead>
+<tr>
+<th>Bloco</th>
+<th>Semanas</th>
+<th>Datas</th>
+<th>Input externo principal</th>
+<th>Checkpoint</th>
+</tr>
+</thead>
+<tbody><tr>
+<td>A1 – consolidação</td>
+<td>1–8</td>
+<td>12/10 – 06/12/2026</td>
+<td>Coffee Break Spanish (CBS) – temporada fixada no diagnóstico da semana 1 (provável temporada 1); Dreaming Spanish (DS) aos sábados, vídeos do nível iniciante</td>
+<td>Semana 8: autoavaliação Europass A1 + apresentação gravada de 2 min</td>
+</tr>
+<tr>
+<td>A2</td>
+<td>9–22</td>
+<td>07/12/2026 – 14/03/2027</td>
+<td>CBS temporada 2; DS no nível seguinte</td>
+<td>Semana 22: autoavaliação A2 + e-mail de 100 palavras + fala de 3 min</td>
+</tr>
+<tr>
+<td>B1</td>
+<td>23–36</td>
+<td>15/03 – 20/06/2027</td>
+<td>CBS temporada 3; DS; Radio Ambulante a partir da semana 30 (1 episódio por mês, com a transcrição do site)</td>
+<td>Semana 36: autoavaliação B1 + apresentação de 5 min</td>
+</tr>
+<tr>
+<td>B2</td>
+<td>37–48</td>
+<td>21/06 – 12/09/2027</td>
+<td>CBS temporada 4; Radio Ambulante semanal; DS nos níveis altos</td>
+<td>Semana 48: autoavaliação B2 + decisão sobre o DELE B2</td>
+</tr>
+</tbody></table>
+<p>A correspondência temporada do CBS ↔ nível CEFR é aproximação do tutor, não classificação oficial do podcast; os nomes dos níveis do Dreaming Spanish não constavam da página conferida em 27/09/2026 (<code>[CONFERIR]</code> ao assinar). Fontes conferidas: as do Plano (CBS, DS, Radio Ambulante, Europass e DELE, 27/09/2026).</p>
+<p><strong>Metas CEFR por trimestre (proposta, <code>[CONFERIR]</code>):</strong> T4/2026 (semanas 1–12) – A1 consolidado e A2 em curso (passado básico); T1/2027 (13–25) – A2 concluído; T2/2027 (26–38) – B1; T3/2027 (39–48) – B2 em curso. Em 30 min por dia, o B2 completo em 48 semanas é meta ambiciosa: em cada checkpoint o programa se ajusta à estimativa de nível (R5) – se a semana 36 não fechar o B1, o bloco B2 se estende, não se comprime.</p>
+<p><strong>Termos dos pontos de atenção:</strong> <em>heterogenérico</em> = gênero diferente do português (el viaje / a viagem); <em>heterotônico</em> = sílaba tônica diferente (teléfono / telefone); <em>heterossemântico</em> (falso amigo) = forma parecida, sentido diferente (oficina = escritório).</p>
+<hr>
+<h2>A1 – consolidação (semanas 1–8)</h2>
+<h3>Semana 1 · 12–18/10/2026 · Quem eu sou</h3>
+<ul>
+<li><strong>Gramática:</strong> gênero e número; artigos definidos e indefinidos; contrações <em>al</em> e <em>del</em> (só elas); possessivos átonos (<em>mi, tu, su, nuestro</em>); <em>muy</em> × <em>mucho</em>; <em>ser</em>, <em>tener</em> e <em>llamarse</em> no presente; pronomes sujeito, <em>tú</em> × <em>usted</em>; números 0–100, dias da semana e horas; presente regular -ar/-er/-ir; <em>gustar</em> e <em>también/tampoco</em>.</li>
+<li><strong>Vocabulário:</strong> apresentação, profissão, escritório (<em>despacho, socio, equipo, cliente, juzgado, audiencia, plazo</em>), agenda, rotina, gostos.</li>
+<li><strong>Função comunicativa:</strong> apresentar-se, dizer de onde é e o que faz, marcar horário, contar a rotina, dizer do que gosta.</li>
+<li><strong>Atenção (brasileiro):</strong> heterogenéricos (<em>la leche, la sangre, la nariz, el puente, el árbol, el color, el equipo</em>, todos os <em>-aje</em>: <em>el viaje, el mensaje</em>); falsos amigos (<em>oficina, apellido, borrar, rato, cena, exquisito, embarazada, jubilado, largo</em>); <em>en el/en la</em> não contrai (PT &quot;no escritório&quot; = <em>en la oficina</em>); possessivo sem artigo (<em>mi socio</em>, nunca <em>el mi socio</em>); <em>y</em> → <em>e</em> antes de som de i (<em>español e inglés</em>); &quot;Yo gusto de…&quot; não existe → <em>Me gusta…</em>.</li>
+<li><strong>Input externo:</strong> diagnóstico do Plano – ter: primeira lição da temporada 1 do CBS; qui: primeira lição da temporada 2; fica a temporada em que ele entende o essencial sem pausar. Sáb: 1 vídeo de 20 min do DS, nível iniciante.</li>
+<li><strong>Lições:</strong> ES-01 (seg, muy/mucho, falsos amigos, gênero) · ES-02 (ter, ser/tener/llamarse) · ES-03 (qua, artigos, al/del, possessivos) · ES-04 (qui, números, dias, horas) · ES-05 (sex, presente regular) · ES-06 (sáb, gustar) · ES-07 (dom, revisão). Cartões: <code>decks/2026-10-12_semana1.tsv</code>.</li>
+</ul>
+<h3>Semana 2 · 19–25/10/2026 · Onde fica</h3>
+<ul>
+<li><strong>Gramática:</strong> <em>estar</em> (lugar e estado); <em>ser</em> × <em>estar</em> (introdução: identidade × estado/lugar; lugar de evento com <em>ser</em>: <em>la reunión es en el despacho</em>); <em>hay</em> × <em>está/están</em>; preposições e locuções de lugar (<em>cerca de, lejos de, al lado de, delante de, detrás de, encima de, debajo de</em>); apócope <em>buen, mal, gran</em>.</li>
+<li><strong>Vocabulário:</strong> cidade, casa, escritório, Canoas e Porto Alegre (onde ele mora desde 2026), móveis e objetos (<em>escritorio, carpeta, mesa, silla</em>).</li>
+<li><strong>Função comunicativa:</strong> localizar coisas e lugares, descrever a cidade e o escritório, perguntar o caminho.</li>
+<li><strong>Atenção:</strong> existência é <em>hay</em>, nunca <em>tiene</em> (PT &quot;tem um café na esquina&quot; = <em>hay un café en la esquina</em>); <em>escritorio</em> = escrivaninha (na Espanha); <em>largo</em> = comprido × <em>ancho</em> = largo; <em>vaso</em> = copo × <em>taza</em> = xícara.</li>
+<li><strong>Input externo:</strong> CBS – 2 episódios na sequência da temporada fixada (ter/qui); DS – 1 vídeo (sáb).</li>
+</ul>
+<h3>Semana 3 · 26/10–01/11/2026 · Meu dia</h3>
+<ul>
+<li><strong>Gramática:</strong> presente com ditongação e→ie (<em>querer, pensar, empezar, entender</em>), o→ue (<em>poder, volver, dormir, almorzar</em>) e e→i (<em>pedir, servir, repetir</em>); <em>empezar a</em> + infinitivo.</li>
+<li><strong>Vocabulário:</strong> rotina, horários, refeições do dia (<em>desayuno, almuerzo/comida, cena</em>).</li>
+<li><strong>Função comunicativa:</strong> descrever um dia de trabalho, dizer o que quer e o que pode fazer.</li>
+<li><strong>Atenção:</strong> a ditongação não existe em português (<em>quiero</em> × quero, <em>puedo</em> × posso) e some em <em>nosotros/vosotros</em> (<em>podemos, queremos</em>); <em>cena</em> = jantar.</li>
+<li><strong>Input externo:</strong> CBS 2 episódios; DS 1 vídeo.</li>
+</ul>
+<h3>Semana 4 · 02–08/11/2026 · Da cama ao tatame</h3>
+<ul>
+<li><strong>Gramática:</strong> verbos reflexivos (<em>levantarse, ducharse, vestirse, acostarse, despertarse</em>); irregulares em 1ª pessoa (<em>hago, pongo, salgo, traigo, conozco, sé</em>; <em>tengo, vengo, digo</em>); frequência (<em>siempre, a menudo, a veces, nunca</em>).</li>
+<li><strong>Vocabulário:</strong> rotina completa, treino (<em>entrenar, el entrenamiento, el gimnasio</em>), roupas básicas.</li>
+<li><strong>Função comunicativa:</strong> contar a rotina inteira, falar de frequência.</li>
+<li><strong>Atenção:</strong> heterossemânticos <em>acordar</em> = combinar/decidir, <em>despertarse</em> = acordar, <em>acordarse de</em> = lembrar-se; <em>academia</em> = escola particular (de idiomas, preparatória) × <em>gimnasio</em> = academia de musculação.</li>
+<li><strong>Input externo:</strong> CBS 2 episódios; DS 1 vídeo.</li>
+</ul>
+<h3>Semana 5 · 09–15/11/2026 · Planos e viagens</h3>
+<ul>
+<li><strong>Gramática:</strong> <em>ir a</em> + infinitivo (futuro próximo); <em>ir, venir, salir, llegar</em> com preposições (<em>ir a, venir de, salir de, llegar a</em>); meios de transporte (<em>en coche, en avión, a pie</em>).</li>
+<li><strong>Vocabulário:</strong> viagem, transporte, aeroporto, hotel, meses e estações, datas (<em>la fecha</em>).</li>
+<li><strong>Função comunicativa:</strong> contar planos, organizar uma viagem, dizer datas.</li>
+<li><strong>Atenção:</strong> <em>ir a</em> com destino (nunca &quot;ir en Madrid&quot;); <em>llegar a</em> (PT &quot;chegar em&quot; → <em>llegar a</em>); <em>fecha</em> = data; <em>luego</em> = depois; <em>pronto</em> = logo, em breve (e <em>listo</em> = pronto).</li>
+<li><strong>Input externo:</strong> CBS 2 episódios; DS 1 vídeo.</li>
+</ul>
+<h3>Semana 6 · 16–22/11/2026 · À mesa</h3>
+<ul>
+<li><strong>Gramática:</strong> pronomes objeto direto (<em>lo, la, los, las</em>) e posição (<em>lo quiero</em> / <em>quiero comprarlo</em>); <em>a</em> pessoal (<em>veo a mi socio</em>); <em>quisiera / me pone…</em> para pedir.</li>
+<li><strong>Vocabulário:</strong> comida, bebida, restaurante, mercado, quantidades.</li>
+<li><strong>Função comunicativa:</strong> pedir num restaurante, comprar no mercado, pedir a conta.</li>
+<li><strong>Atenção:</strong> falsos amigos de mesa (<em>cena, exquisito, salsa</em> = molho, <em>propina</em> = gorjeta, <em>sobremesa</em> = conversa depois da refeição × <em>postre</em> = sobremesa, <em>polvo</em> = pó × <em>pulpo</em> = polvo); <em>a</em> pessoal, que o português não usa.</li>
+<li><strong>Input externo:</strong> CBS 2 episódios; DS 1 vídeo (de preferência sobre comida).</li>
+</ul>
+<h3>Semana 7 · 23–29/11/2026 · Gosto, dói, interessa</h3>
+<ul>
+<li><strong>Gramática:</strong> verbos como <em>gustar</em> (<em>encantar, interesar, importar, doler, parecer</em>); <em>a mí también / a mí tampoco / a mí sí / a mí no</em>; pronomes de objeto indireto (<em>me, te, le, nos, os, les</em>).</li>
+<li><strong>Vocabulário:</strong> corpo, esportes, lazer, leitura.</li>
+<li><strong>Função comunicativa:</strong> falar de gostos e opiniões simples, dizer onde dói.</li>
+<li><strong>Atenção:</strong> <em>me duele la rodilla</em> (verbo concorda com a parte do corpo); heterogenérico <em>el dolor</em>; heterotônicos <em>academia</em> (a-ca-DE-mia), <em>alergia</em> (a-LER-gia), <em>terapia</em> (te-RA-pia).</li>
+<li><strong>Input externo:</strong> CBS 2 episódios; DS 1 vídeo.</li>
+</ul>
+<h3>Semana 8 · 30/11–06/12/2026 · Revisão A1</h3>
+<ul>
+<li><strong>Gramática:</strong> revisão das semanas 1–7 a partir dos erros registrados.</li>
+<li><strong>Vocabulário:</strong> reciclagem dos decks 1–7.</li>
+<li><strong>Função comunicativa:</strong> apresentação pessoal e profissional de 2 min, gravada (sex).</li>
+<li><strong>Atenção:</strong> os padrões de <code>Erros.md</code>.</li>
+<li><strong>Input externo:</strong> CBS 2 episódios; DS 1 vídeo. <strong>Checkpoint:</strong> grade Europass A1 (link no Plano), estimativa de nível na nota da lição de domingo.</li>
+</ul>
+<h2>A2 (semanas 9–22)</h2>
+<h3>Semana 9 · 07–13/12/2026 · O que fiz hoje</h3>
+<ul>
+<li><strong>Gramática:</strong> pretérito perfecto (<em>he trabajado</em>); particípios irregulares (<em>hecho, dicho, escrito, visto, puesto, vuelto, abierto, roto</em>); marcadores <em>hoy, esta semana, este año, ya, todavía no</em>.</li>
+<li><strong>Vocabulário:</strong> tarefas do trabalho e da casa.</li>
+<li><strong>Função comunicativa:</strong> contar o que já fez e o que ainda falta.</li>
+<li><strong>Atenção:</strong> PT &quot;tenho trabalhado&quot; (repetição até agora) ≠ <em>he trabajado</em> (ação concluída no período atual); na Espanha o perfecto é o passado de &quot;hoje&quot;; em boa parte da América prefere-se o indefinido; <em>todavía</em> = ainda.</li>
+<li><strong>Input externo:</strong> CBS temporada 2 (ou a seguinte à do A1), 2 episódios; DS 1 vídeo.</li>
+</ul>
+<h3>Semana 10 · 14–20/12/2026 · Minha trajetória</h3>
+<ul>
+<li><strong>Gramática:</strong> pretérito indefinido regular (<em>trabajé, comí, viví</em>); marcadores <em>ayer, anoche, el año pasado, en 2015, hace dos años</em>.</li>
+<li><strong>Vocabulário:</strong> formação, carreira, universidade, mestrado e doutorado.</li>
+<li><strong>Função comunicativa:</strong> contar a própria biografia.</li>
+<li><strong>Atenção:</strong> o acento muda o sentido: <em>trabajo</em> (eu trabalho) × <em>trabajó</em> (ele trabalhou) × <em>trabajé</em>; <em>hace dos años</em> = há dois anos.</li>
+<li><strong>Input externo:</strong> CBS 2 episódios; DS 1 vídeo.</li>
+</ul>
+<h3>Semana 11 · 21–27/12/2026 · Festas</h3>
+<ul>
+<li><strong>Gramática:</strong> indefinido irregular (<em>fui, tuve, estuve, hice, pude, puse, dije, vine, quise, supe</em>).</li>
+<li><strong>Vocabulário:</strong> Natal, festas, família, presentes.</li>
+<li><strong>Função comunicativa:</strong> contar como foram as festas.</li>
+<li><strong>Atenção:</strong> <em>fui</em> serve a <em>ser</em> e <em>ir</em>, como no português; <em>regalo</em> = presente (de dar), <em>regalar</em> = presentear.</li>
+<li><strong>Input externo:</strong> CBS 2 episódios; DS 1 vídeo. Semana de festas: a lição pode ser cortada, não empurrada (R1).</li>
+</ul>
+<h3>Semana 12 · 28/12/2026–03/01/2027 · Balanço do ano</h3>
+<ul>
+<li><strong>Gramática:</strong> perfecto × indefinido; revisão de <em>ir a</em> + infinitivo.</li>
+<li><strong>Vocabulário:</strong> metas, retrospectiva, ano novo.</li>
+<li><strong>Função comunicativa:</strong> fazer o balanço de 2026 e dizer as metas de 2027.</li>
+<li><strong>Atenção:</strong> os padrões de <code>Erros.md</code> do trimestre.</li>
+<li><strong>Input externo:</strong> CBS 2 episódios; DS 1 vídeo. <strong>Checkpoint T4/2026:</strong> estimativa de nível × meta do trimestre.</li>
+</ul>
+<h3>Semana 13 · 04–10/01/2027 · Quando eu era criança</h3>
+<ul>
+<li><strong>Gramática:</strong> pretérito imperfecto (<em>trabajaba, comía, vivía</em>; <em>era, iba, veía</em>).</li>
+<li><strong>Vocabulário:</strong> infância, escola, cidade natal, hábitos antigos.</li>
+<li><strong>Função comunicativa:</strong> descrever o passado e hábitos que já não tem.</li>
+<li><strong>Atenção:</strong> <em>-aba</em> com b; <em>soler</em> + infinitivo (<em>solía ir</em>) para hábito.</li>
+<li><strong>Input externo:</strong> CBS 2 episódios; DS 1 vídeo.</li>
+</ul>
+<h3>Semana 14 · 11–17/01/2027 · Contar um caso</h3>
+<ul>
+<li><strong>Gramática:</strong> indefinido × imperfecto (cenário × ação); <em>estaba</em> + gerúndio interrompido por indefinido.</li>
+<li><strong>Vocabulário:</strong> viagens, imprevistos, conectores de narrativa (<em>primero, después, de repente, al final</em>).</li>
+<li><strong>Função comunicativa:</strong> contar uma história com começo, meio e fim.</li>
+<li><strong>Atenção:</strong> o imperfecto não é o &quot;passado longo&quot;: é o cenário; <em>luego</em> e <em>después</em> = depois (não &quot;logo&quot;).</li>
+<li><strong>Input externo:</strong> CBS 2 episódios; DS 1 vídeo.</li>
+</ul>
+<h3>Semana 15 · 18–24/01/2027 · Comparar</h3>
+<ul>
+<li><strong>Gramática:</strong> comparativos (<em>más… que, menos… que, tan… como, tanto… como</em>); superlativo (<em>el más…</em>, <em>-ísimo</em>); <em>mejor, peor, mayor, menor</em>.</li>
+<li><strong>Vocabulário:</strong> compras, roupas, preços, cores.</li>
+<li><strong>Função comunicativa:</strong> comparar produtos, lugares e pessoas.</li>
+<li><strong>Atenção:</strong> <em>tan</em> + adjetivo × <em>tanto</em> + substantivo; heterogenérico <em>el color</em>; <em>rubio</em> = loiro.</li>
+<li><strong>Input externo:</strong> CBS 2 episódios; DS 1 vídeo.</li>
+</ul>
+<h3>Semana 16 · 25–31/01/2027 · Futuro e cortesia</h3>
+<ul>
+<li><strong>Gramática:</strong> futuro simples (<em>trabajaré</em>; <em>tendré, haré, podré, diré, saldré, vendré, querré, sabré</em>); condicional de cortesia (<em>me gustaría, podría, querría</em>).</li>
+<li><strong>Vocabulário:</strong> planos profissionais, tempo e clima.</li>
+<li><strong>Função comunicativa:</strong> fazer previsões e pedidos educados.</li>
+<li><strong>Atenção:</strong> os irregulares do futuro e do condicional são os mesmos radicais (<em>tendré/tendría</em>).</li>
+<li><strong>Input externo:</strong> CBS 2 episódios; DS 1 vídeo.</li>
+</ul>
+<h3>Semana 17 · 01–07/02/2027 · Instruções</h3>
+<ul>
+<li><strong>Gramática:</strong> imperativo afirmativo de <em>tú</em> e <em>usted</em> (<em>habla/hable</em>; <em>ven, pon, haz, di, sal, ten, ve, sé</em>); pronomes depois do imperativo (<em>dímelo, siéntese</em>).</li>
+<li><strong>Vocabulário:</strong> instruções, receitas, treino, orientações ao cliente.</li>
+<li><strong>Função comunicativa:</strong> dar instruções e orientações.</li>
+<li><strong>Atenção:</strong> o acento gráfico aparece quando o pronome se cola (<em>dime</em> → <em>dímelo</em>).</li>
+<li><strong>Input externo:</strong> CBS 2 episódios; DS 1 vídeo.</li>
+</ul>
+<h3>Semana 18 · 08–14/02/2027 · Papéis do escritório</h3>
+<ul>
+<li><strong>Gramática:</strong> pronomes objeto direto + indireto juntos (<em>te lo, se lo</em>); <em>le/les</em> de cortesia.</li>
+<li><strong>Vocabulário:</strong> documentos (<em>carpeta, firma, fecha, plazo, copia, sello</em>), entregas, e-mail.</li>
+<li><strong>Função comunicativa:</strong> pedir e entregar documentos, combinar prazos.</li>
+<li><strong>Atenção:</strong> <em>le lo</em> não existe → <em>se lo</em> (<em>se lo envío mañana</em>); <em>firma</em> = assinatura (<em>firmar</em> = assinar).</li>
+<li><strong>Input externo:</strong> CBS 2 episódios; DS 1 vídeo.</li>
+</ul>
+<h3>Semana 19 · 15–21/02/2027 · Saúde</h3>
+<ul>
+<li><strong>Gramática:</strong> <em>doler</em> e <em>tener dolor de</em>; <em>tener que</em> / <em>hay que</em> + infinitivo (obrigação).</li>
+<li><strong>Vocabulário:</strong> médico, farmácia, sintomas, lesões de treino.</li>
+<li><strong>Função comunicativa:</strong> descrever sintomas, marcar consulta.</li>
+<li><strong>Atenção:</strong> <em>constipado</em> = resfriado (na Espanha), não preso de ventre; <em>embarazada</em> = grávida; <em>hay que</em> = é preciso.</li>
+<li><strong>Input externo:</strong> CBS 2 episódios; DS 1 vídeo.</li>
+</ul>
+<h3>Semana 20 · 22–28/02/2027 · Processos em andamento</h3>
+<ul>
+<li><strong>Gramática:</strong> perífrases (<em>estar</em> + gerúndio, <em>acabar de, volver a, dejar de, empezar a, seguir</em> + gerúndio, <em>llevar</em> + tempo + gerúndio).</li>
+<li><strong>Vocabulário:</strong> hábitos, mudanças, estudo.</li>
+<li><strong>Função comunicativa:</strong> falar do que está fazendo, do que acabou de fazer e do que deixou de fazer.</li>
+<li><strong>Atenção:</strong> <em>volver a</em> + infinitivo = fazer de novo; <em>llevo dos años estudiando</em> = estudo há dois anos.</li>
+<li><strong>Input externo:</strong> CBS 2 episódios; DS 1 vídeo.</li>
+</ul>
+<h3>Semana 21 · 01–07/03/2027 · Por e para</h3>
+<ul>
+<li><strong>Gramática:</strong> <em>por</em> × <em>para</em> (causa, meio, troca, lugar de passagem × finalidade, destino, prazo, destinatário).</li>
+<li><strong>Vocabulário:</strong> viagem, motivos, prazos (<em>para el lunes</em>).</li>
+<li><strong>Função comunicativa:</strong> justificar e dizer finalidade.</li>
+<li><strong>Atenção:</strong> o português usa &quot;por/para&quot; com outra distribuição (<em>gracias por</em>, <em>para el viernes</em>, <em>por la mañana</em>).</li>
+<li><strong>Input externo:</strong> CBS 2 episódios; DS 1 vídeo.</li>
+</ul>
+<h3>Semana 22 · 08–14/03/2027 · Revisão A2</h3>
+<ul>
+<li><strong>Gramática:</strong> revisão das semanas 9–21 pelos erros registrados.</li>
+<li><strong>Vocabulário:</strong> reciclagem dos decks 9–21.</li>
+<li><strong>Função comunicativa:</strong> e-mail informal de 100 palavras (qua) e fala de 3 min sobre a própria trajetória (sex).</li>
+<li><strong>Atenção:</strong> os padrões de <code>Erros.md</code>.</li>
+<li><strong>Input externo:</strong> CBS 2 episódios; DS 1 vídeo. <strong>Checkpoint:</strong> grade Europass A2.</li>
+</ul>
+<h2>B1 (semanas 23–36)</h2>
+<h3>Semana 23 · 15–21/03/2027 · Desejos</h3>
+<ul>
+<li><strong>Gramática:</strong> presente do subjuntivo (regulares e irregulares: <em>sea, vaya, tenga, haga, pueda, sepa, esté, dé</em>); <em>querer que, esperar que, ojalá</em>.</li>
+<li><strong>Vocabulário:</strong> desejos, votos, planos para os outros.</li>
+<li><strong>Função comunicativa:</strong> expressar desejos e esperanças.</li>
+<li><strong>Atenção:</strong> <em>espero que vengas</em> (sujeitos diferentes → subjuntivo); <em>ojalá</em> + subjuntivo.</li>
+<li><strong>Input externo:</strong> CBS temporada 3, 2 episódios; DS 1 vídeo.</li>
+</ul>
+<h3>Semana 24 · 22–28/03/2027 · Avaliar</h3>
+<ul>
+<li><strong>Gramática:</strong> subjuntivo com valoração e emoção (<em>es importante que, es necesario que, me alegra que, me molesta que, me preocupa que</em>).</li>
+<li><strong>Vocabulário:</strong> sentimentos, trabalho em equipe.</li>
+<li><strong>Função comunicativa:</strong> avaliar situações e reagir.</li>
+<li><strong>Atenção:</strong> heterotônicos <em>burocracia</em> (bu-ro-CRA-cia), <em>democracia</em> (de-mo-CRA-cia).</li>
+<li><strong>Input externo:</strong> CBS 2 episódios; DS 1 vídeo.</li>
+</ul>
+<h3>Semana 25 · 29/03–04/04/2027 · Opinar</h3>
+<ul>
+<li><strong>Gramática:</strong> <em>creo que / pienso que</em> + indicativo × <em>no creo que</em> + subjuntivo; <em>es verdad que</em> × <em>no es verdad que</em>.</li>
+<li><strong>Vocabulário:</strong> notícias, atualidade, sociedade.</li>
+<li><strong>Função comunicativa:</strong> dar opinião, concordar e discordar.</li>
+<li><strong>Atenção:</strong> decorar o par <em>creo que es</em> (indicativo) × <em>no creo que sea</em> (subjuntivo).</li>
+<li><strong>Input externo:</strong> CBS 2 episódios; DS 1 vídeo. <strong>Checkpoint T1/2027.</strong></li>
+</ul>
+<h3>Semana 26 · 05–11/04/2027 · Quando chegar</h3>
+<ul>
+<li><strong>Gramática:</strong> orações temporais com subjuntivo para o futuro (<em>cuando llegue, hasta que termine, en cuanto pueda, antes de que salga</em>); <em>si</em> + presente do indicativo.</li>
+<li><strong>Vocabulário:</strong> planejamento, agenda, prazos.</li>
+<li><strong>Função comunicativa:</strong> planejar e condicionar ações.</li>
+<li><strong>Atenção:</strong> o espanhol não tem futuro do subjuntivo de uso corrente: PT &quot;quando eu chegar&quot; = <em>cuando llegue</em>; PT &quot;se eu puder&quot; = <em>si puedo</em> (nunca subjuntivo depois de <em>si</em> no presente).</li>
+<li><strong>Input externo:</strong> CBS 2 episódios; DS 1 vídeo.</li>
+</ul>
+<h3>Semana 27 · 12–18/04/2027 · Atendimento</h3>
+<ul>
+<li><strong>Gramática:</strong> imperativo negativo (<em>no hables, no se preocupe</em>) e com pronomes (<em>no lo hagas</em>); registro formal com <em>usted/ustedes</em>.</li>
+<li><strong>Vocabulário:</strong> atendimento ao cliente, reclamações, instruções.</li>
+<li><strong>Função comunicativa:</strong> aconselhar, proibir, tranquilizar um cliente.</li>
+<li><strong>Atenção:</strong> no negativo o pronome vai antes (<em>no me lo digas</em> × <em>dímelo</em>).</li>
+<li><strong>Input externo:</strong> CBS 2 episódios; DS 1 vídeo.</li>
+</ul>
+<h3>Semana 28 · 19–25/04/2027 · O que já tinha acontecido</h3>
+<ul>
+<li><strong>Gramática:</strong> pretérito pluscuamperfecto (<em>había hecho</em>); discurso indireto com verbo no presente (<em>dice que…</em>).</li>
+<li><strong>Vocabulário:</strong> relatos, notícias.</li>
+<li><strong>Função comunicativa:</strong> relatar fatos anteriores a outro fato passado.</li>
+<li><strong>Atenção:</strong> <em>había</em> + particípio é invariável (<em>había llegado</em>, nunca concorda).</li>
+<li><strong>Input externo:</strong> CBS 2 episódios; DS 1 vídeo.</li>
+</ul>
+<h3>Semana 29 · 26/04–02/05/2027 · Definir e descrever</h3>
+<ul>
+<li><strong>Gramática:</strong> orações relativas (<em>que, quien, el que, la que, donde, lo que</em>); <em>lo</em> neutro (<em>lo importante, lo mejor, lo que pasa</em>).</li>
+<li><strong>Vocabulário:</strong> descrição de pessoas, lugares e objetos.</li>
+<li><strong>Função comunicativa:</strong> definir, explicar o que é algo.</li>
+<li><strong>Atenção:</strong> <em>lo</em> + adjetivo não tem equivalente direto (PT &quot;o importante&quot; = <em>lo importante</em>).</li>
+<li><strong>Input externo:</strong> CBS 2 episódios; DS 1 vídeo.</li>
+</ul>
+<h3>Semana 30 · 03–09/05/2027 · Ele disse que…</h3>
+<ul>
+<li><strong>Gramática:</strong> discurso indireto no passado (<em>dijo que venía / vendría / había venido</em>); verbos de relato (<em>explicar, contar, preguntar, pedir que</em> + subjuntivo).</li>
+<li><strong>Vocabulário:</strong> reunião, audiência, depoimento.</li>
+<li><strong>Função comunicativa:</strong> relatar o que alguém disse (cliente, testemunha, colega).</li>
+<li><strong>Atenção:</strong> <em>pedir que</em> + subjuntivo (<em>me pidió que llamara</em> – formas do imperfeito do subjuntivo só reconhecidas aqui, produzidas na semana 33).</li>
+<li><strong>Input externo:</strong> CBS 2 episódios; DS 1 vídeo; Radio Ambulante: 1 episódio no mês, com a transcrição.</li>
+</ul>
+<h3>Semana 31 · 10–16/05/2027 · Argumentar</h3>
+<ul>
+<li><strong>Gramática:</strong> conectores (<em>sin embargo, aunque</em> + indicativo, <em>por lo tanto, además, en cambio, es decir, por un lado… por otro</em>).</li>
+<li><strong>Vocabulário:</strong> argumentação, debate.</li>
+<li><strong>Função comunicativa:</strong> escrever um parágrafo argumentativo (qua, 120 palavras).</li>
+<li><strong>Atenção:</strong> <em>sin embargo</em> = no entanto; no direito, <em>embargo</em> = penhora (<em>embargo de bienes</em>).</li>
+<li><strong>Input externo:</strong> CBS 2 episódios; DS 1 vídeo.</li>
+</ul>
+<h3>Semana 32 · 17–23/05/2027 · Espanhol do direito (1)</h3>
+<ul>
+<li><strong>Gramática:</strong> voz ativa e passiva simples (<em>fue condenado, fue dictada la sentencia</em>); revisão do discurso indireto.</li>
+<li><strong>Vocabulário:</strong> <em>demanda, demandante, demandado, juzgado, sentencia, recurso, plazo, prueba, testigo, abogado, despacho/bufete, préstamo, tarjeta de crédito, consumidor, el fraude</em>.</li>
+<li><strong>Função comunicativa:</strong> explicar o próprio trabalho a um colega hispanofalante.</li>
+<li><strong>Atenção:</strong> <em>presunto</em> = suposto (<em>el presunto autor</em>) × <em>jamón</em> = presunto; <em>contestar</em> = responder (<em>contestación a la demanda</em>); heterogenérico <em>el fraude</em>; o equivalente do &quot;consignado&quot; muda de país para país – <code>[CONFERIR]</code> antes de usar um termo.</li>
+<li><strong>Input externo:</strong> CBS 2 episódios; DS 1 vídeo; leitura de uma notícia jurídica em espanhol (aberta pelo <code>WebFetch</code> na sessão, URL na nota).</li>
+</ul>
+<h3>Semana 33 · 24–30/05/2027 · Conselhos e hipóteses</h3>
+<ul>
+<li><strong>Gramática:</strong> imperfeito do subjuntivo (formas em <em>-ra</em> e <em>-se</em>: <em>tuviera/tuviese</em>); condicional para conselho (<em>yo que tú…, deberías, te aconsejaría que</em> + imperfeito do subjuntivo).</li>
+<li><strong>Vocabulário:</strong> problemas e soluções, decisões.</li>
+<li><strong>Função comunicativa:</strong> aconselhar.</li>
+<li><strong>Atenção:</strong> o radical do imperfeito do subjuntivo é o da 3ª plural do indefinido (<em>tuvieron</em> → <em>tuviera</em>).</li>
+<li><strong>Input externo:</strong> CBS 2 episódios; DS 1 vídeo.</li>
+</ul>
+<h3>Semana 34 · 31/05–06/06/2027 · Se eu tivesse tempo</h3>
+<ul>
+<li><strong>Gramática:</strong> condicionais (<em>si</em> + presente → futuro/imperativo; <em>si</em> + imperfeito do subjuntivo → condicional: <em>si tuviera tiempo, viajaría</em>).</li>
+<li><strong>Vocabulário:</strong> sonhos, planos, viagens longas.</li>
+<li><strong>Função comunicativa:</strong> levantar hipóteses.</li>
+<li><strong>Atenção:</strong> nunca condicional depois de <em>si</em> (<em>si tendría</em> ✗ → <em>si tuviera</em>).</li>
+<li><strong>Input externo:</strong> CBS 2 episódios; DS 1 vídeo.</li>
+</ul>
+<h3>Semana 35 · 07–13/06/2027 · Ficar, virar, tornar-se</h3>
+<ul>
+<li><strong>Gramática:</strong> verbos de mudança (<em>ponerse, volverse, hacerse, quedarse, convertirse en, llegar a ser</em>).</li>
+<li><strong>Vocabulário:</strong> emoções, carreira, mudanças de vida.</li>
+<li><strong>Função comunicativa:</strong> contar mudanças pessoais e profissionais.</li>
+<li><strong>Atenção:</strong> o &quot;ficar&quot; do português tem várias traduções (<em>ponerse nervioso, quedarse en casa, quedarse sin batería, hacerse abogado</em>).</li>
+<li><strong>Input externo:</strong> CBS 2 episódios; DS 1 vídeo; Radio Ambulante: 1 episódio no mês.</li>
+</ul>
+<h3>Semana 36 · 14–20/06/2027 · Revisão B1</h3>
+<ul>
+<li><strong>Gramática:</strong> revisão das semanas 23–35 pelos erros registrados.</li>
+<li><strong>Vocabulário:</strong> reciclagem dos decks 23–35.</li>
+<li><strong>Função comunicativa:</strong> apresentação de 5 min sobre a própria área, gravada (sex).</li>
+<li><strong>Atenção:</strong> os padrões de <code>Erros.md</code>.</li>
+<li><strong>Input externo:</strong> CBS 2 episódios; DS 1 vídeo. <strong>Checkpoint:</strong> grade Europass B1; decisão de estender o bloco B1 ou abrir o B2.</li>
+</ul>
+<h2>B2 (semanas 37–48)</h2>
+<h3>Semana 37 · 21–27/06/2027 · Reclamar por escrito</h3>
+<ul>
+<li><strong>Gramática:</strong> correlação de tempos com imperfeito do subjuntivo (<em>quería que vinieras, me pidió que firmara</em>).</li>
+<li><strong>Vocabulário:</strong> reclamações, serviços, banco, consumo.</li>
+<li><strong>Função comunicativa:</strong> reclamar formalmente por escrito.</li>
+<li><strong>Atenção:</strong> os padrões de <code>Erros.md</code> do subjuntivo.</li>
+<li><strong>Input externo:</strong> CBS temporada 4, 2 episódios; Radio Ambulante 1 episódio (sáb, no lugar do DS em semanas alternadas).</li>
+</ul>
+<h3>Semana 38 · 28/06–04/07/2027 · Supor</h3>
+<ul>
+<li><strong>Gramática:</strong> pretérito perfecto do subjuntivo (<em>espero que hayas llegado</em>); futuro composto e condicional composto de suposição (<em>habrá llegado, habría salido</em>).</li>
+<li><strong>Vocabulário:</strong> dúvidas, suposições, investigação.</li>
+<li><strong>Função comunicativa:</strong> fazer suposições sobre o passado.</li>
+<li><strong>Atenção:</strong> o futuro de suposição (<em>serán las diez</em> = devem ser dez horas).</li>
+<li><strong>Input externo:</strong> CBS 2 episódios; Radio Ambulante 1 episódio. <strong>Checkpoint T2/2027.</strong></li>
+</ul>
+<h3>Semana 39 · 05–11/07/2027 · Se eu soubesse</h3>
+<ul>
+<li><strong>Gramática:</strong> condicionais irreais no passado (<em>si hubiera sabido, habría venido</em>) e mistas.</li>
+<li><strong>Vocabulário:</strong> decisões, arrependimentos, estratégia.</li>
+<li><strong>Função comunicativa:</strong> avaliar decisões passadas.</li>
+<li><strong>Atenção:</strong> <em>hubiera</em> + particípio depois de <em>si</em>, nunca <em>habría</em>.</li>
+<li><strong>Input externo:</strong> CBS 2 episódios; Radio Ambulante 1 episódio.</li>
+</ul>
+<h3>Semana 40 · 12–18/07/2027 · Notícia jurídica</h3>
+<ul>
+<li><strong>Gramática:</strong> passiva com <em>ser</em> e passiva reflexa (<em>se firmó el contrato, se dictó sentencia</em>); <em>se</em> impessoal (<em>se dice que</em>).</li>
+<li><strong>Vocabulário:</strong> imprensa, judiciário, economia.</li>
+<li><strong>Função comunicativa:</strong> ler e resumir uma notícia jurídica.</li>
+<li><strong>Atenção:</strong> a passiva reflexa concorda (<em>se venden casas</em>); a passiva com <em>ser</em> é mais formal que no português falado.</li>
+<li><strong>Input externo:</strong> CBS 2 episódios; notícia aberta pelo <code>WebFetch</code> na sessão.</li>
+</ul>
+<h3>Semana 41 · 19–25/07/2027 · Conceder</h3>
+<ul>
+<li><strong>Gramática:</strong> concessivas (<em>aunque</em> + subjuntivo, <em>por más que, a pesar de que, aun así</em>); causais (<em>ya que, puesto que, dado que, como</em>).</li>
+<li><strong>Vocabulário:</strong> debate, política pública, direito do consumidor.</li>
+<li><strong>Função comunicativa:</strong> debater, ceder um ponto e manter a tese.</li>
+<li><strong>Atenção:</strong> <em>aunque llueva</em> (hipótese) × <em>aunque llueve</em> (fato).</li>
+<li><strong>Input externo:</strong> CBS 2 episódios; Radio Ambulante 1 episódio.</li>
+</ul>
+<h3>Semana 42 · 26/07–01/08/2027 · Espanhol da conversa</h3>
+<ul>
+<li><strong>Gramática:</strong> marcadores do discurso oral (<em>pues, bueno, o sea, a ver, es que, ¿no?</em>); diminutivos.</li>
+<li><strong>Vocabulário:</strong> expressões coloquiais frequentes, reações.</li>
+<li><strong>Função comunicativa:</strong> soar natural numa conversa.</li>
+<li><strong>Atenção:</strong> <em>vale</em> (Espanha) = está bem; <em>es que…</em> para justificar.</li>
+<li><strong>Input externo:</strong> CBS 2 episódios; Radio Ambulante 1 episódio.</li>
+</ul>
+<h3>Semana 43 · 02–08/08/2027 · Espanha × América</h3>
+<ul>
+<li><strong>Gramática:</strong> <em>vosotros</em> × <em>ustedes</em>; voseo (<em>vos tenés</em>, Argentina e Uruguai) só para reconhecer.</li>
+<li><strong>Vocabulário:</strong> variação (<em>coche/carro, ordenador/computadora, móvil/celular, zumo/jugo, conducir/manejar</em>).</li>
+<li><strong>Função comunicativa:</strong> entender falantes de várias regiões.</li>
+<li><strong>Atenção:</strong> não misturar <em>vosotros</em> com <em>ustedes</em> na mesma fala.</li>
+<li><strong>Input externo:</strong> CBS 2 episódios; Radio Ambulante 1 episódio (América Latina).</li>
+</ul>
+<h3>Semana 44 · 09–15/08/2027 · Correspondência profissional</h3>
+<ul>
+<li><strong>Gramática:</strong> registro formal escrito; fórmulas (<em>Estimado/a…</em>, <em>Le escribo para…</em>, <em>Quedo a la espera de su respuesta</em>, <em>Atentamente</em>).</li>
+<li><strong>Vocabulário:</strong> e-mail, convite, proposta, confirmação.</li>
+<li><strong>Função comunicativa:</strong> escrever e-mail profissional (qua, 150 palavras).</li>
+<li><strong>Atenção:</strong> <em>Estimado/a</em> + nome é a abertura padrão; <em>Atentamente</em> fecha.</li>
+<li><strong>Input externo:</strong> CBS 2 episódios; Radio Ambulante 1 episódio.</li>
+</ul>
+<h3>Semana 45 · 16–22/08/2027 · Espanhol acadêmico</h3>
+<ul>
+<li><strong>Gramática:</strong> nominalização, impessoalidade (<em>se analiza, cabe señalar</em>).</li>
+<li><strong>Vocabulário:</strong> <em>tesis doctoral, director de tesis, ponencia, congreso, resumen, palabras clave</em>.</li>
+<li><strong>Função comunicativa:</strong> apresentar a própria pesquisa em 3 min.</li>
+<li><strong>Atenção:</strong> heterotônicos <em>academia, democracia, burocracia, nivel</em> (ni-VEL), <em>límite</em> (LÍ-mi-te), <em>cerebro</em> (ce-RE-bro).</li>
+<li><strong>Input externo:</strong> CBS 2 episódios; uma palestra acadêmica em espanhol, aberta na sessão.</li>
+</ul>
+<h3>Semana 46 · 23–29/08/2027 · Regências</h3>
+<ul>
+<li><strong>Gramática:</strong> verbos com preposição diferente do português (<em>tardar en, enamorarse de, parecerse a, darse cuenta de, jugar al</em> + esporte, <em>ir en coche / a pie</em>).</li>
+<li><strong>Vocabulário:</strong> reciclagem de <code>Erros.md</code>.</li>
+<li><strong>Função comunicativa:</strong> frases longas sem decalque do português.</li>
+<li><strong>Atenção:</strong> PT &quot;demorar para&quot; = <em>tardar en</em>; PT &quot;apaixonar-se por&quot; = <em>enamorarse de</em>; PT &quot;parecer-se com&quot; = <em>parecerse a</em>.</li>
+<li><strong>Input externo:</strong> CBS 2 episódios; Radio Ambulante 1 episódio.</li>
+</ul>
+<h3>Semana 47 · 30/08–05/09/2027 · Negociar</h3>
+<ul>
+<li><strong>Gramática:</strong> matizar (<em>no del todo, en cierto modo, hasta cierto punto</em>); condicional e subjuntivo na negociação.</li>
+<li><strong>Vocabulário:</strong> acordo, proposta, contraproposta, conciliação.</li>
+<li><strong>Função comunicativa:</strong> simular uma negociação ou uma audiência de conciliação (sex, gravada).</li>
+<li><strong>Atenção:</strong> <em>estar de acuerdo</em> (nunca &quot;estar de acordo&quot; com <em>o</em>); <em>acordar</em> = combinar.</li>
+<li><strong>Input externo:</strong> CBS 2 episódios; Radio Ambulante 1 episódio.</li>
+</ul>
+<h3>Semana 48 · 06–12/09/2027 · Revisão final</h3>
+<ul>
+<li><strong>Gramática:</strong> revisão das semanas 37–47 pelos erros registrados.</li>
+<li><strong>Vocabulário:</strong> reciclagem dos decks 37–47.</li>
+<li><strong>Função comunicativa:</strong> conversa de 10 min gravada sobre trabalho, pesquisa e vida.</li>
+<li><strong>Atenção:</strong> os padrões de <code>Erros.md</code> do ano.</li>
+<li><strong>Input externo:</strong> CBS 2 episódios; Radio Ambulante 1 episódio. <strong>Checkpoint T3/2027:</strong> grade Europass B2; decisão sobre o DELE B2 (datas e preços <code>[CONFERIR]</code> no site do Instituto Cervantes).</li>
+</ul>
+</main></body></html>

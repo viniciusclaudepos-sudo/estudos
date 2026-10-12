@@ -1,0 +1,548 @@
+<!doctype html><html lang="pt-BR"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1"><meta name="color-scheme" content="light dark"><title>Programa de Inglês</title><style>body{margin:0;background:#f7f5f0;color:#1d2330;font:16px/1.55 -apple-system,system-ui,sans-serif}main{max-width:760px;margin:0 auto;padding:24px 18px 60px}h1{font-size:26px;border-bottom:3px solid #1d4ed8;padding-bottom:8px}h2{color:#1d4ed8;margin-top:32px}table{border-collapse:collapse;width:100%;font-size:14px;display:block;overflow-x:auto}td,th{border:1px solid #e6e1d6;padding:6px 8px;vertical-align:top}th{background:#efeae0}blockquote{border-left:4px solid #1d4ed8;margin:12px 0;padding:6px 14px;background:#fff}a{color:#1d4ed8}code{background:#efeae0;padding:1px 4px;border-radius:4px}@media(prefers-color-scheme:dark){body{background:#12151c;color:#eef0f4}th{background:#222835}td,th{border-color:#2c3340}blockquote{background:#1b2029}code{background:#222835}}</style></head><body><main><h1>Programa de inglês – A1 → C1/C2 em 48 semanas</h1>
+<p>Curso completo que substitui o Duolingo: uma unidade por semana, uma lição interativa por dia (<code>Lições interativas/licoes/EN-NN.json</code> → HTML pelo <code>motor.py</code>) e os cartões da semana em <code>decks/</code>. Plano, recursos e rotina: Plano · grade de horários: Semana-tipo · erros: Erros.</p>
+<p>Substitui o programa C1 → C2 de 12/10/2026, arquivado em <code>ingles/_arquivo/Programa avancado 2026-10-12.md</code> com as lições EN-01 a EN-07 da primeira versão (<code>Lições interativas/_arquivo/ingles-avancado/</code>) e o deck <code>ingles/_arquivo/2026-10-13_semana1.tsv</code>. Esse material volta nos blocos B1 a C1 (ver &quot;Material arquivado reaproveitado&quot;).</p>
+<p>A sequência gramatical é a do tutor (ordem usual de cursos A1–C1), não a cópia de um currículo oficial: nenhuma obra de referência foi aberta para montá-la (R7).</p>
+<h2>Como a semana vira lição</h2>
+<ul>
+<li><strong>Uma lição por dia, 20–25 min de app + o input externo do dia</strong> (R1: cabe nos 30 min ou é cortada). A semana do inglês vai de <strong>terça a segunda</strong> (semana 1 = 13 a 19/10/2026). Número da lição: semana <em>n</em>, dia <em>d</em> (ter = 1 … seg = 7) → <code>EN-</code> 7(<em>n</em>−1)+<em>d</em> (semana 1 = EN-01 a EN-07; semana 2 = EN-08 a EN-14 …).</li>
+<li><strong>Grade (Semana-tipo):</strong> ter escuta (lição + áudio graduado) · qua fala (lição + frases gravadas, correção ao fim) · qui escuta · sex escrita (lição + texto curto para <code>/corrigir</code>) · sáb conversa (lição + <code>/conversa</code>) · dom revisão SRS da semana · seg escrita (lição com o ponto novo que abre a semana seguinte).</li>
+<li><strong>Tamanho da produção por fase:</strong> A1 – 5 a 8 frases escritas, 1 min de fala; A2 – 60–100 palavras, 2 min; B1 – 100–150 palavras, 3 min; B2 e C1 – 150–200 palavras, 3–5 min.</li>
+<li><strong>Revisão espaçada dentro das lições:</strong> cada lição repete vocabulário e estruturas das 2–6 anteriores; o domingo revisa a semana; a última semana de cada nível revisa o nível.</li>
+<li><strong>Cartões:</strong> <code>decks/AAAA-MM-DD_semanaN.tsv</code> (data da terça que abre a semana), só com o que apareceu nas lições ou nos erros dele (R2). Anki ainda não instalado (<code>[CONFERIR]</code>, ver Plano).</li>
+<li><strong>Erros:</strong> o que ele errar no app (o resultado copiado no fim da lição) e na produção corrigida volta como exercício na lição seguinte; padrão repetido vai para <code>Erros.md</code>.</li>
+<li><strong>Explicação em português, conteúdo em inglês</strong> (R6); no A1 e no A2 as instruções dos exercícios também vêm em português.</li>
+</ul>
+<h2>Ritmo e checkpoints de salto</h2>
+<p>Brasileiro adulto costuma chegar com inglês passivo (música, séries, leitura técnica), e por isso o A1 e o A2 andam mais rápido que no espanhol: 4 e 6 semanas, contra 8 e 14. Isso é estimativa do tutor, não medição: os checkpoints abaixo decidem se ele acelera ou se o bloco se estende.</p>
+<table>
+<thead>
+<tr>
+<th>Bloco</th>
+<th>Semanas</th>
+<th>Datas</th>
+<th>Input externo principal</th>
+<th>Checkpoint</th>
+</tr>
+</thead>
+<tbody><tr>
+<td>A1 – base rápida</td>
+<td>1–4</td>
+<td>13/10 – 09/11/2026</td>
+<td>VOA <em>Let&#39;s Learn English – Level 1</em> (2–3 lições por semana); British Council LearnEnglish, Listening A1</td>
+<td><strong>S1</strong> (dom 18/10): teste de nível gratuito do British Council · <strong>S4</strong>: revisão do A1 + apresentação gravada de 1 min</td>
+</tr>
+<tr>
+<td>A2</td>
+<td>5–10</td>
+<td>10/11 – 21/12/2026</td>
+<td>VOA <em>Level 1</em> até o fim e <em>Level 2</em>; British Council Listening e Reading A2</td>
+<td><strong>S10</strong>: autoavaliação Europass A2 + teste do British Council + fala de 2 min</td>
+</tr>
+<tr>
+<td>B1</td>
+<td>11–20</td>
+<td>22/12/2026 – 01/03/2027</td>
+<td>British Council B1; VOA <em>As It Is</em> e <em>Words &amp; Their Stories</em>; TED a partir da S17</td>
+<td><strong>S20</strong>: <strong>EF SET 50 min</strong> + autoavaliação B1 + fala de 3 min</td>
+</tr>
+<tr>
+<td>B2 – trilha jurídica</td>
+<td>21–34</td>
+<td>02/03 – 07/06/2027</td>
+<td>SCOTUS (sustentações orais com transcrição); <em>Planet Money</em>; CFPB; TED</td>
+<td><strong>S34</strong>: <strong>EF SET 90 min</strong> + autoavaliação B2 + fala de 5 min</td>
+</tr>
+<tr>
+<td>C1 – trilha acadêmica e fluência</td>
+<td>35–48</td>
+<td>08/06 – 13/09/2027</td>
+<td>Academic Phrasebank; TED; SCOTUS; <em>Planet Money</em>; 3MT <code>[CONFERIR]</code></td>
+<td><strong>S48</strong>: <strong>EF SET 90 min</strong> + texto de 300 palavras + fala de 5 min comparada à da S4</td>
+</tr>
+</tbody></table>
+<p><strong>Regras de salto (valem em todo checkpoint e em todo domingo):</strong></p>
+<ol>
+<li><strong>Semana dupla:</strong> revisão de domingo com 90 % ou mais <strong>e</strong> a produção da semana sem erro nas estruturas da semana → a semana seguinte junta duas unidades (as lições do dia trazem os dois pontos).</li>
+<li><strong>Pular bloco:</strong> no checkpoint, teste de nível (British Council ou EF SET) já no nível seguinte <strong>e</strong> revisão do bloco com 90 % ou mais → o bloco que falta vira uma semana de revisão rápida e o programa segue do bloco seguinte. Exemplo: teste da S1 em A2 ou acima → as semanas 2–4 se fundem numa só, e a S3 já abre o A2.</li>
+<li><strong>Estender:</strong> revisão abaixo de 70 % ou o mesmo padrão em <code>Erros.md</code> com 3 repetições → o bloco ganha uma semana, e o fim do programa se ajusta (o C1 se estende, não se comprime).</li>
+<li>As semanas que sobrarem por salto vão para o fim: mais C1 e a extensão C2 de leitura.</li>
+<li>Nível é sempre <strong>estimativa</strong> a partir das lições e dos testes, nunca certificação (R5).</li>
+</ol>
+<p><strong>Metas CEFR por trimestre</strong> (do programa aprovado em 12/10/2026; ajustam-se em cada checkpoint, R5): T4/2026 (S1–12) – A2 concluído e B1 em curso · T1/2027 (S13–24) – B1 concluído e B2 em curso · T2/2027 (S25–36) – B2 concluído e C1 em curso · T3/2027 (S37–48) – C1; C2 na leitura jurídica e acadêmica como extensão. C1 completo em 48 semanas a 30 min por dia é meta ambiciosa e só se sustenta se o inglês passivo dele se confirmar nos checkpoints da S1 e da S4.</p>
+<p><strong>Termos dos pontos de atenção:</strong> <em>falso amigo</em> = forma parecida, sentido diferente (<em>actually</em> = na verdade, não &quot;atualmente&quot;); <em>vogal epentética</em> = o &quot;i&quot; que o brasileiro acrescenta depois de consoante final (<em>big</em> dito &quot;bigui&quot;, <em>Facebook</em> dito &quot;feicibuqui&quot;); <em>forma fraca</em> = a pronúncia reduzida de palavras gramaticais na frase (<em>to</em> → /tə/, <em>can</em> → /kən/); <em>stress</em> = sílaba tônica.</p>
+<h2>Recursos</h2>
+<p><strong>Conferidos na web nesta sessão (12/10/2026) – A1 a B1:</strong></p>
+<ul>
+<li>VOA Learning English – <a href="https://learningenglish.voanews.com/">https://learningenglish.voanews.com/</a> – níveis Beginning, Intermediate e Advanced; programas <em>Let&#39;s Learn English – Level 1</em> e <em>Level 2</em>, <em>As It Is</em>, <em>Words &amp; Their Stories</em>, <em>Everyday Grammar</em>, <em>English in a Minute</em>, <em>How to Pronounce</em>. O site não diz se é gratuito nem se há transcrição (<code>[CONFERIR]</code> na primeira escuta).</li>
+<li>VOA <em>Let&#39;s Learn English – Level 1</em> – <a href="https://learningenglish.voanews.com/p/5644.html">https://learningenglish.voanews.com/p/5644.html</a> – curso para iniciante, 52 semanas, um vídeo por lição, com fichas de exercício; lições 1 a 5: <em>Welcome!</em>, <em>Hello, I&#39;m Anna!</em>, <em>I&#39;m Here!</em>, <em>What Is It?</em>, <em>Where Are You?</em>. Ritmo aqui: 2–3 lições por semana (mais rápido que o do curso). <em>Level 2</em>: visto no menu, conteúdo <code>[CONFERIR]</code> antes da S7.</li>
+<li>British Council LearnEnglish – <a href="https://learnenglish.britishcouncil.org/">https://learnenglish.britishcouncil.org/</a> – recursos gratuitos por nível: Listening, Reading e Writing de A1 a C1; Speaking de A1 a B2; Grammar A1–A2, B1–B2 e C1; Vocabulary A1–A2 e B1–B2. Listening A1 (<a href="https://learnenglish.britishcouncil.org/skills/listening/a1-listening">https://learnenglish.britishcouncil.org/skills/listening/a1-listening</a>): 12 atividades, cada uma com tarefa de preparação, áudio e duas tarefas de compreensão (ex.: <em>Meeting a new team member</em>, <em>Business cards</em>, <em>A voicemail message</em>, <em>Booking a table</em>); transcrição não informada na página. Outras páginas: Reading A1 <code>/free-resources/reading/a1</code>, Listening A2 <code>/free-resources/listening/a2</code>, Listening B1 <code>/free-resources/listening/b1</code>, Grammar A1–A2 <code>/free-resources/grammar/a1-a2</code>.</li>
+<li>Teste de nível gratuito do British Council – <a href="https://learnenglish.britishcouncil.org/english-levels/online-english-level-test">https://learnenglish.britishcouncil.org/english-levels/online-english-level-test</a> (duração <code>[CONFERIR]</code>; se não couber nos 30 min, entra no lugar da leitura de domingo).</li>
+</ul>
+<p><strong>Conferidos no Plano ou no programa arquivado (27/09 e 12/10/2026) – B1 em diante:</strong></p>
+<ul>
+<li>YouGlish – <a href="https://youglish.com/">https://youglish.com/</a> – pronúncia de qualquer palavra em vídeos reais (desde a S1, como apoio).</li>
+<li>TED – <a href="https://www.ted.com/talks">https://www.ted.com/talks</a> (a partir da S17; talk de cada semana <code>[CONFERIR]</code> na semana).</li>
+<li>NPR <em>Planet Money</em> – feed <a href="https://feeds.npr.org/510289/podcast.xml">https://feeds.npr.org/510289/podcast.xml</a> (a partir da S21; transcrição <code>[CONFERIR]</code>).</li>
+<li>Supreme Court of the United States – áudio das sustentações orais com transcrição: <a href="https://www.supremecourt.gov/oral_arguments/argument_audio.aspx">https://www.supremecourt.gov/oral_arguments/argument_audio.aspx</a> (a partir da S24).</li>
+<li>CFPB – Consumer Tools – <a href="https://www.consumerfinance.gov/consumer-tools/">https://www.consumerfinance.gov/consumer-tools/</a> (a partir da S27).</li>
+<li>Academic Phrasebank (University of Manchester) – <a href="https://www.phrasebank.manchester.ac.uk/">https://www.phrasebank.manchester.ac.uk/</a> (a partir da S36).</li>
+<li>Three Minute Thesis (UQ) – <a href="https://threeminutethesis.uq.edu.au/">https://threeminutethesis.uq.edu.au/</a> – vídeos <code>[CONFERIR]</code> antes da S40.</li>
+<li>Medição: EF SET – <a href="https://www.efset.org/">https://www.efset.org/</a> (50 min: leitura e escuta; 90 min: as quatro habilidades); grade de autoavaliação CEFR do Europass – <a href="https://europass.europa.eu/en/common-european-framework-reference-language-skills">https://europass.europa.eu/en/common-european-framework-reference-language-skills</a></li>
+</ul>
+<p><strong>Não conferidos – <code>[CONFERIR]</code> antes de usar:</strong> BBC Learning English (o site não abre nesta máquina); Cambridge Dictionary on-line (respondeu 403); Oyez (transcrição sincronizada não confirmada); modelo CARS de introdução (Swales) – referência a abrir antes da S37.</p>
+<h2>Material arquivado reaproveitado</h2>
+<table>
+<thead>
+<tr>
+<th>Arquivado (12/10/2026)</th>
+<th>Volta em</th>
+<th>O que se aproveita</th>
+</tr>
+</thead>
+<tbody><tr>
+<td>EN-02 <em>Sounding natural – -ed endings, th and your work</em></td>
+<td>S5 (-ed) e S1–S4 (<em>th</em>, vogal extra)</td>
+<td>os três sons do -ed; <em>th</em>; vogal epentética</td>
+</tr>
+<tr>
+<td>EN-05 <em>Conversation – asking about research</em></td>
+<td>S15 e S37</td>
+<td>perguntas indiretas; ganhar tempo; perguntas sobre pesquisa</td>
+</tr>
+<tr>
+<td>EN-01 <em>False friends and courtroom English</em></td>
+<td>S17 e S22</td>
+<td>falsos amigos (<em>actually, intend, attend, eventually</em>); colocações do tribunal</td>
+</tr>
+<tr>
+<td>EN-04 <em>Formal emails – time, deadlines and prepositions</em></td>
+<td>S18</td>
+<td>in/on/at, <em>by</em> × <em>until</em>, preposições dependentes, e-mail formal</td>
+</tr>
+<tr>
+<td>EN-06 <em>Week 1 review</em></td>
+<td>S20</td>
+<td>revisão do B1</td>
+</tr>
+<tr>
+<td>EN-07 <em>Evidence, advice, damages</em></td>
+<td>S25</td>
+<td>incontáveis; <em>damage</em> × <em>damages</em>; falsos amigos jurídicos</td>
+</tr>
+<tr>
+<td>EN-03 <em>Listening – a morning in small claims court</em></td>
+<td>S26</td>
+<td><em>should have</em>; formas fracas; audiência</td>
+</tr>
+<tr>
+<td>Deck <code>2026-10-13_semana1.tsv</code></td>
+<td>S15–S26</td>
+<td>cartões entram na semana do tema (com a tag da lição de origem)</td>
+</tr>
+<tr>
+<td>Programa C1 → C2 (blocos 1 a 4)</td>
+<td>S21–S47</td>
+<td>temas jurídicos (litígio, contratos, consumer/banking law, common law × civil law), acadêmicos (paper, congresso, Q&amp;A) e de fluência (phrasal verbs, idioms, connected speech)</td>
+</tr>
+</tbody></table>
+<hr>
+<h2>A1 – base rápida (semanas 1–4)</h2>
+<h3>Semana 1 · 13–19/10/2026 · Quem eu sou</h3>
+<ul>
+<li><strong>Gramática:</strong> <em>to be</em> no presente (afirmativa, negativa, perguntas) e contrações (<em>I&#39;m, you&#39;re, he&#39;s, it&#39;s, we&#39;re, they&#39;re</em>; <em>isn&#39;t, aren&#39;t</em>); pronomes sujeito; <em>a/an</em> com profissão e <em>the</em>; plural regular; números 0–100; possessivos (<em>my, your, his, her, our, their</em>) e <em>&#39;s</em>; <em>this/that</em>; dias da semana, horas e <em>at/on/in</em>; presente simples afirmativo (<em>I work / he works</em>).</li>
+<li><strong>Vocabulário:</strong> apresentação, profissões (<em>lawyer, teacher, professor, student, partner</em>), família, números, dias da semana, horas, rotina, escritório (<em>office, law firm, client, meeting</em>).</li>
+<li><strong>Função comunicativa:</strong> apresentar-se, dizer de onde é e o que faz, dar telefone e e-mail, falar da família de alguém, marcar dia e hora, contar a rotina.</li>
+<li><strong>Atenção (brasileiro):</strong> sujeito obrigatório (PT &quot;é advogado&quot; → <em>he&#39;s a lawyer</em>; &quot;é tarde&quot; → <em>it&#39;s late</em>); idade com <em>be</em> (<em>I&#39;m 30</em>, nunca <em>I have 30 years</em>); artigo com profissão (<em>I&#39;m a lawyer</em>); <em>his/her</em> concorda com o dono, não com a coisa (<em>Tom and his wife</em>); dias e meses com maiúscula (<em>Monday, October</em>); pronúncia – <em>th</em> em <em>three, thirty, this</em> (não &quot;tree&quot;, &quot;dis&quot;), <em>thirteen</em> × <em>thirty</em> (thir-TEEN × THIR-ty), sem vogal extra no fim (<em>work</em>, não &quot;worki&quot;), -s de 3ª pessoa pronunciado (<em>works, lives, watches</em>).</li>
+<li><strong>Input externo:</strong> ter – VOA <em>Let&#39;s Learn English – Level 1</em>, lições 1 e 2 (<em>Welcome!</em>, <em>Hello, I&#39;m Anna!</em>); qui – lição 3 (<em>I&#39;m Here!</em>); dom – <strong>teste de nível gratuito do British Council</strong> no lugar do TSV (checkpoint de salto, regra 2). Sáb e seg sem input externo: a conversa e a escrita ocupam o resto dos 30 min.</li>
+<li><strong>Lições:</strong> EN-01 (ter, <em>to be</em> e pronomes) · EN-02 (qua, <em>to be</em> em perguntas, <em>a/an</em>, profissões) · EN-03 (qui, números, idade e contato) · EN-04 (sex, possessivos, <em>&#39;s</em> e família) · EN-05 (sáb, dias, horas e <em>at/on/in</em>) · EN-06 (dom, revisão) · EN-07 (seg, presente simples e rotina). Cartões: <code>decks/2026-10-13_semana1.tsv</code>.</li>
+</ul>
+<h3>Semana 2 · 20–26/10/2026 · Meu dia</h3>
+<ul>
+<li><strong>Gramática:</strong> presente simples na negativa e na pergunta (<em>don&#39;t/doesn&#39;t</em>, <em>do/does</em>); respostas curtas (<em>Yes, I do</em>); advérbios de frequência (<em>always, usually, often, sometimes, never</em>) e posição; <em>wh-</em> questions (<em>what, where, when, what time, who, how</em>).</li>
+<li><strong>Vocabulário:</strong> rotina de trabalho, refeições (<em>breakfast, lunch, dinner</em>), treino (<em>gym, jiu-jitsu, train</em>), transporte.</li>
+<li><strong>Função comunicativa:</strong> descrever um dia de trabalho, perguntar sobre hábitos.</li>
+<li><strong>Atenção:</strong> <em>I no work</em> → <em>I don&#39;t work</em>; <em>Do she work?</em> → <em>Does she work?</em>; <em>She doesn&#39;t works</em> (o -s vai para o <em>does</em>); -s pronunciado em três sons (<em>works</em> /s/, <em>lives</em> /z/, <em>watches</em> /ɪz/); advérbio antes do verbo principal (<em>I always work</em>), mas depois de <em>be</em> (<em>I&#39;m always late</em>).</li>
+<li><strong>Input externo:</strong> VOA <em>Level 1</em>, lições 4–6 (<em>What Is It?</em>, <em>Where Are You?</em> e a seguinte); British Council Listening A1 (<em>Meeting a new team member</em>, <em>A voicemail message</em>).</li>
+</ul>
+<h3>Semana 3 · 27/10–02/11/2026 · Onde fica</h3>
+<ul>
+<li><strong>Gramática:</strong> <em>there is / there are</em>; preposições de lugar (<em>in, on, at, under, next to, between, near, in front of, behind</em>); <em>this/that/these/those</em>; plurais irregulares (<em>people, children, men, women</em>); <em>can/can&#39;t</em> (habilidade, pedido, permissão).</li>
+<li><strong>Vocabulário:</strong> cidade, casa, escritório (<em>desk, chair, folder, printer</em>), Canoas e Porto Alegre (onde ele mora desde 2026).</li>
+<li><strong>Função comunicativa:</strong> localizar coisas e lugares, descrever o escritório, pedir ajuda.</li>
+<li><strong>Atenção:</strong> existência é <em>there is</em>, nunca <em>have</em> (PT &quot;tem um café perto&quot; → <em>there&#39;s a café near here</em>); <em>people</em> é plural (<em>people are</em>); <em>Can you to help me?</em> → <em>Can you help me?</em>; <em>can</em> fraco na afirmativa (<em>I can go</em> – /kən/) e <em>can&#39;t</em> sempre forte (/kænt/; no americano o <em>t</em> final costuma soar quase mudo, e a vogal plena é o que distingue) – ouvir os dois no YouGlish.</li>
+<li><strong>Input externo:</strong> VOA <em>Level 1</em>, lições 7–9 (títulos <code>[CONFERIR]</code>); British Council Reading A1.</li>
+</ul>
+<h3>Semana 4 · 03–09/11/2026 · Agora e revisão do A1</h3>
+<ul>
+<li><strong>Gramática:</strong> presente contínuo (<em>I&#39;m working now</em>) × presente simples; verbos que não vão para o contínuo (<em>like, want, know, need</em>); imperativo (<em>Sit down. Don&#39;t worry.</em>); <em>like/love/hate</em> + -ing.</li>
+<li><strong>Vocabulário:</strong> reciclagem dos decks 1–3; atividades do momento, telefone e mensagens.</li>
+<li><strong>Função comunicativa:</strong> dizer o que está fazendo agora; apresentação pessoal de 1 min gravada (qua).</li>
+<li><strong>Atenção:</strong> <em>I am work</em> → <em>I&#39;m working</em>; <em>I&#39;m liking it</em> → <em>I like it</em>; o -ing sem vogal extra no fim (<em>working</em>, não &quot;workingui&quot;); os padrões de <code>Erros.md</code>.</li>
+<li><strong>Input externo:</strong> VOA <em>Level 1</em>, lições 10–12 (<code>[CONFERIR]</code>). <strong>Checkpoint A1:</strong> revisão do bloco no domingo + a gravação de 1 min; regra 2 decide se o A2 encurta.</li>
+</ul>
+<h2>A2 (semanas 5–10)</h2>
+<h3>Semana 5 · 10–16/11/2026 · Ontem</h3>
+<ul>
+<li><strong>Gramática:</strong> passado de <em>be</em> (<em>was/were</em>); passado simples regular; <em>ago</em>; marcadores (<em>yesterday, last week, in 2019</em>).</li>
+<li><strong>Vocabulário:</strong> fim de semana, viagem curta, trabalho da semana.</li>
+<li><strong>Função comunicativa:</strong> contar o que fez ontem e no fim de semana.</li>
+<li><strong>Atenção:</strong> os três sons do -ed (<em>worked</em> /t/, <em>filed</em> /d/, <em>wanted</em> /ɪd/) – a sílaba extra só depois de <em>t</em> ou <em>d</em> (aproveita a EN-02 arquivada); <em>two years ago</em> (nunca <em>there are two years</em> / <em>does two years</em>); <em>I go yesterday</em> → <em>I went yesterday</em>.</li>
+<li><strong>Input externo:</strong> VOA <em>Level 1</em> (sequência); British Council Listening A2.</li>
+</ul>
+<h3>Semana 6 · 17–23/11/2026 · Minha trajetória</h3>
+<ul>
+<li><strong>Gramática:</strong> passado simples irregular (<em>went, had, made, got, took, came, saw, wrote, became</em>); perguntas e negativas com <em>did</em>.</li>
+<li><strong>Vocabulário:</strong> escola, faculdade, carreira (<em>graduate, degree, law school, master&#39;s, PhD, become a lawyer</em>).</li>
+<li><strong>Função comunicativa:</strong> contar a própria biografia em fatos (os dados vêm dele).</li>
+<li><strong>Atenção:</strong> <em>Did you went?</em> → <em>Did you go?</em>; &quot;sou formado em Direito&quot; → <em>I have a law degree / I graduated in law</em> (nunca <em>I&#39;m formed</em>); <em>college</em> ≠ colégio (colégio = <em>school / high school</em>); <em>attend</em> = frequentar, não atender.</li>
+<li><strong>Input externo:</strong> VOA <em>Level 1</em> (sequência); British Council Reading A2.</li>
+</ul>
+<h3>Semana 7 · 24–30/11/2026 · Comparar e comprar</h3>
+<ul>
+<li><strong>Gramática:</strong> comparativos e superlativos (<em>cheaper, more expensive, the best</em>); contáveis × incontáveis; <em>some/any</em>, <em>much/many</em>, <em>a lot of</em>, <em>How much / How many</em>.</li>
+<li><strong>Vocabulário:</strong> compras, preços, dinheiro, comida e mercado.</li>
+<li><strong>Função comunicativa:</strong> comparar produtos e lugares, perguntar preço, pedir num restaurante.</li>
+<li><strong>Atenção:</strong> <em>more cheap</em> → <em>cheaper</em>; <em>more better</em> → <em>better</em>; <em>than</em> × <em>then</em>; <em>informations, advices</em> → <em>information, advice</em> (incontáveis); vogal longa × curta (<em>cheap/chip, sheep/ship, leave/live</em>).</li>
+<li><strong>Input externo:</strong> VOA <em>Level 2</em>, primeiras lições (<code>[CONFERIR]</code> o conteúdo); British Council Listening A2 (<em>Ordering in a café</em>, do A1, como aquecimento).</li>
+</ul>
+<h3>Semana 8 · 01–07/12/2026 · Planos</h3>
+<ul>
+<li><strong>Gramática:</strong> <em>going to</em> (plano), <em>will</em> (decisão na hora, promessa, previsão), presente contínuo para compromisso marcado; datas (<em>on 20 October</em>, dito <em>the twentieth of October</em> / <em>October twentieth</em>).</li>
+<li><strong>Vocabulário:</strong> viagem, agenda, meses e estações, compromissos.</li>
+<li><strong>Função comunicativa:</strong> contar planos, marcar compromisso, combinar datas.</li>
+<li><strong>Atenção:</strong> <em>I will to go</em> → <em>I will go</em>; <em>pretend</em> ≠ pretender (pretender = <em>intend / plan</em>; <em>pretend</em> = fingir); <em>next week</em> sem preposição (<em>in the next week</em> muda o sentido); <em>th</em> nos ordinais (<em>fourth, fifth, twelfth</em>).</li>
+<li><strong>Input externo:</strong> VOA <em>Level 2</em>; British Council Listening A2.</li>
+</ul>
+<h3>Semana 9 · 08–14/12/2026 · Experiências</h3>
+<ul>
+<li><strong>Gramática:</strong> <em>present perfect</em> com <em>ever/never</em>, <em>just, already, yet</em>; <em>present perfect</em> × passado simples (tempo terminado × experiência sem data).</li>
+<li><strong>Vocabulário:</strong> viagens, experiências profissionais, conquistas.</li>
+<li><strong>Função comunicativa:</strong> falar do que já fez e do que ainda não fez.</li>
+<li><strong>Atenção:</strong> <em>I have been in London in 2019</em> → <em>I was in London in 2019</em> (data terminada pede passado simples); <em>I already have done</em> → <em>I have already done</em>; particípios irregulares (<em>done, been, seen, written, taken</em>).</li>
+<li><strong>Input externo:</strong> VOA <em>Level 2</em>; British Council Reading A2.</li>
+</ul>
+<h3>Semana 10 · 15–21/12/2026 · Obrigações e revisão do A2</h3>
+<ul>
+<li><strong>Gramática:</strong> <em>must / have to / should / don&#39;t have to / mustn&#39;t</em>; revisão das semanas 5–9 pelos erros registrados.</li>
+<li><strong>Vocabulário:</strong> regras do trabalho, conselhos, reciclagem dos decks 5–9.</li>
+<li><strong>Função comunicativa:</strong> dar conselho, dizer o que é obrigatório; fala de 2 min sobre a própria trajetória (qua).</li>
+<li><strong>Atenção:</strong> <em>I must to go</em> → <em>I must go</em>; <em>mustn&#39;t</em> (proibido) ≠ <em>don&#39;t have to</em> (não é preciso); os padrões de <code>Erros.md</code>.</li>
+<li><strong>Input externo:</strong> VOA <em>Level 2</em>. <strong>Checkpoint A2:</strong> autoavaliação Europass A2 + teste do British Council + fala de 2 min.</li>
+</ul>
+<h2>B1 (semanas 11–20)</h2>
+<h3>Semana 11 · 22–28/12/2026 · Há quanto tempo</h3>
+<ul>
+<li><strong>Gramática:</strong> <em>present perfect</em> com <em>for/since</em>; <em>How long have you…?</em>; <em>present perfect continuous</em> (introdução).</li>
+<li><strong>Vocabulário:</strong> festas, família, casa, tempo livre.</li>
+<li><strong>Função comunicativa:</strong> dizer há quanto tempo faz algo.</li>
+<li><strong>Atenção:</strong> <em>I live here since 2019</em> → <em>I&#39;ve lived here since 2019</em>; <em>for</em> + período × <em>since</em> + ponto de partida; <em>during</em> não substitui <em>for</em> (<em>for two years</em>).</li>
+<li><strong>Input externo:</strong> British Council Listening B1. Semana de festas: a lição pode ser cortada, não empurrada (R1).</li>
+</ul>
+<h3>Semana 12 · 29/12/2026–04/01/2027 · Contar um caso</h3>
+<ul>
+<li><strong>Gramática:</strong> passado contínuo; <em>when/while</em>; conectores de narrativa (<em>first, then, after that, suddenly, in the end</em>).</li>
+<li><strong>Vocabulário:</strong> viagens, imprevistos, balanço do ano.</li>
+<li><strong>Função comunicativa:</strong> contar uma história com começo, meio e fim; balanço de 2026 e metas de 2027.</li>
+<li><strong>Atenção:</strong> <em>assist</em> ≠ assistir (assistir TV = <em>watch</em>; <em>assist</em> = ajudar); <em>I was arrived</em> → <em>I arrived</em>; os padrões de <code>Erros.md</code> do trimestre.</li>
+<li><strong>Input externo:</strong> British Council Listening B1; VOA <em>Words &amp; Their Stories</em> (nível <code>[CONFERIR]</code>). <strong>Checkpoint T4/2026:</strong> estimativa de nível × meta do trimestre.</li>
+</ul>
+<h3>Semana 13 · 05–11/01/2027 · Se e quando</h3>
+<ul>
+<li><strong>Gramática:</strong> condicional 0 e 1; <em>unless</em>; orações de tempo com presente (<em>when I get there</em>).</li>
+<li><strong>Vocabulário:</strong> e-mail simples, trabalho, combinados.</li>
+<li><strong>Função comunicativa:</strong> escrever um e-mail curto (<em>I&#39;m writing to…</em>, <em>Best regards</em>); condicionar ações.</li>
+<li><strong>Atenção:</strong> <em>If I will have time</em> → <em>If I have time</em>; <em>When I will arrive</em> → <em>When I arrive</em>; o português usa futuro do subjuntivo onde o inglês usa presente.</li>
+<li><strong>Input externo:</strong> British Council Reading B1; VOA <em>As It Is</em> (nível <code>[CONFERIR]</code>).</li>
+</ul>
+<h3>Semana 14 · 12–18/01/2027 · Make, do e verbos com -ing</h3>
+<ul>
+<li><strong>Gramática:</strong> gerúndio × infinitivo (<em>enjoy -ing, want to, decide to, avoid -ing, look forward to -ing</em>); <em>make × do</em>; <em>say × tell</em>.</li>
+<li><strong>Vocabulário:</strong> tarefas, decisões, hábitos.</li>
+<li><strong>Função comunicativa:</strong> falar de preferências e decisões.</li>
+<li><strong>Atenção:</strong> <em>make a question</em> → <em>ask a question</em>; <em>do a mistake</em> → <em>make a mistake</em>; <em>say me</em> → <em>tell me</em>; <em>I look forward to hear</em> → <em>to hearing</em>.</li>
+<li><strong>Input externo:</strong> British Council Listening B1; VOA <em>As It Is</em>.</li>
+</ul>
+<h3>Semana 15 · 19–25/01/2027 · Perguntar com educação (abre a trilha jurídica)</h3>
+<ul>
+<li><strong>Gramática:</strong> perguntas indiretas (<em>Could you tell me where the court is?</em>); <em>explain something to someone</em>; <em>discuss</em> sem preposição.</li>
+<li><strong>Vocabulário:</strong> escritório e tribunal, nível básico: <em>lawyer, attorney (EUA), law firm, client, court, judge, hearing, case, lawsuit, sue, contract, bank, loan</em>.</li>
+<li><strong>Função comunicativa:</strong> pedir informação e explicar o próprio trabalho de forma simples.</li>
+<li><strong>Atenção:</strong> <em>Could you tell me where is the court?</em> → <em>where the court is</em>; <em>explain me</em> → <em>explain it to me</em>; <em>discuss about</em> → <em>discuss</em>; <em>audience</em> ≠ audiência (audiência = <em>hearing</em>; <em>audience</em> = plateia); <em>process</em> ≠ processo judicial (<em>case, lawsuit, proceedings</em>). Aproveita a EN-05 arquivada.</li>
+<li><strong>Input externo:</strong> British Council Listening B1; VOA <em>As It Is</em>.</li>
+</ul>
+<h3>Semana 16 · 26/01–01/02/2027 · A passiva e os documentos</h3>
+<ul>
+<li><strong>Gramática:</strong> voz passiva no presente e no passado (<em>is signed, was signed by</em>); <em>have something done</em> (introdução).</li>
+<li><strong>Vocabulário:</strong> documentos e banco: <em>sign, signature, clause, term, bank statement, charge, fee, account, card</em>.</li>
+<li><strong>Função comunicativa:</strong> descrever processos e documentos sem dizer quem fez.</li>
+<li><strong>Atenção:</strong> <em>was signed for the client</em> → <em>by the client</em>; <em>costume</em> ≠ costume (costume = <em>habit / custom</em>); <em>push</em> ≠ puxar (<em>push</em> = empurrar; puxar = <em>pull</em>).</li>
+<li><strong>Input externo:</strong> British Council Reading B1; VOA <em>As It Is</em>.</li>
+</ul>
+<h3>Semana 17 · 02–08/02/2027 · Definir e descrever</h3>
+<ul>
+<li><strong>Gramática:</strong> orações relativas (<em>who, which, that, where, whose</em>); sem pronome repetido.</li>
+<li><strong>Vocabulário:</strong> pessoas, lugares e objetos; falsos amigos I.</li>
+<li><strong>Função comunicativa:</strong> definir, explicar o que é algo.</li>
+<li><strong>Atenção:</strong> <em>the lawyer that he works there</em> → <em>the lawyer who works there</em>; falsos amigos (aproveita a EN-01 arquivada): <em>actually</em> = na verdade, <em>eventually</em> = finalmente, <em>attend</em> = comparecer, <em>sensible</em> = sensato (sensível = <em>sensitive</em>), <em>library</em> = biblioteca (livraria = <em>bookstore</em>).</li>
+<li><strong>Input externo:</strong> British Council Listening B1; <strong>TED</strong> – primeira talk curta, com transcrição (escolha <code>[CONFERIR]</code> na semana).</li>
+</ul>
+<h3>Semana 18 · 09–15/02/2027 · Tempo, prazos e preposições</h3>
+<ul>
+<li><strong>Gramática:</strong> <em>in/on/at</em> com tempo; <em>by</em> × <em>until</em>; preposições dependentes (<em>depend on, consist of, married to, arrive in/at, comply with, responsible for</em>).</li>
+<li><strong>Vocabulário:</strong> prazos, agenda, e-mail formal (<em>Dear…, I would be grateful if…, I look forward to hearing from you</em>).</li>
+<li><strong>Função comunicativa:</strong> escrever e-mail formal curto marcando prazo.</li>
+<li><strong>Atenção:</strong> <em>depend of</em> → <em>depend on</em>; <em>married with</em> → <em>married to</em>; <em>arrive to</em> → <em>arrive in/at</em>; <em>until Friday</em> (o tempo todo) × <em>by Friday</em> (prazo final). Aproveita a EN-04 arquivada.</li>
+<li><strong>Input externo:</strong> British Council Reading B1; TED.</li>
+</ul>
+<h3>Semana 19 · 16–22/02/2027 · Se eu tivesse e ele disse que</h3>
+<ul>
+<li><strong>Gramática:</strong> condicional 2 (<em>If I had more time, I would…</em>); discurso indireto básico (<em>He said that… / She told me that…</em>).</li>
+<li><strong>Vocabulário:</strong> opinião, conselho, hipóteses.</li>
+<li><strong>Função comunicativa:</strong> levantar hipóteses e relatar o que alguém disse.</li>
+<li><strong>Atenção:</strong> <em>If I would have</em> → <em>If I had</em>; <em>He said me</em> → <em>He told me</em>; <em>would</em> contraído na fala (<em>I&#39;d</em>).</li>
+<li><strong>Input externo:</strong> British Council Listening B1; TED.</li>
+</ul>
+<h3>Semana 20 · 23/02–01/03/2027 · Revisão do B1</h3>
+<ul>
+<li><strong>Gramática:</strong> revisão das semanas 11–19 pelos erros registrados (aproveita a EN-06 arquivada).</li>
+<li><strong>Vocabulário:</strong> reciclagem dos decks 11–19.</li>
+<li><strong>Função comunicativa:</strong> e-mail de 150 palavras (sex) e fala de 3 min sobre o trabalho (qua).</li>
+<li><strong>Atenção:</strong> os padrões de <code>Erros.md</code>.</li>
+<li><strong>Input externo:</strong> TED. <strong>Checkpoint B1:</strong> <strong>EF SET 50 min</strong> + autoavaliação Europass B1 + fala de 3 min.</li>
+</ul>
+<h2>B2 – trilha jurídica (semanas 21–34)</h2>
+<p>Temas do bloco 1 e 2 do programa arquivado, agora com a gramática do B2.</p>
+<h3>Semana 21 · 02–08/03/2027 · A carreira em tempos verbais</h3>
+<ul>
+<li><strong>Gramática:</strong> <em>present perfect</em> × passado simples × <em>present perfect continuous</em>; <em>past perfect</em>.</li>
+<li><strong>Vocabulário:</strong> carreira e academia: <em>PhD candidate, supervisor, defend a thesis, lecture, practice law</em>.</li>
+<li><strong>Função comunicativa:</strong> bio profissional em 1ª e 3ª pessoa (escrita).</li>
+<li><strong>Atenção:</strong> <em>I&#39;m studying here since…</em> → <em>I&#39;ve been studying…</em>; vogais longas × curtas (<em>full/fool, sit/seat</em>).</li>
+<li><strong>Input externo:</strong> NPR <em>Planet Money</em> (primeiro episódio); TED.</li>
+</ul>
+<h3>Semana 22 · 09–15/03/2027 · Os artigos e o litígio</h3>
+<ul>
+<li><strong>Gramática:</strong> artigo zero no genérico (<em>Life is…, Consumers…</em>); <em>the</em> com instituições; <em>a/an</em> com profissão.</li>
+<li><strong>Vocabulário:</strong> litígio I – <em>complaint, answer, hearing, ruling, judgment, appeal</em>; colocações do tribunal (<em>rule, grant, deny, dismiss, award</em>), da EN-01 arquivada.</li>
+<li><strong>Função comunicativa:</strong> resumir um caso fictício.</li>
+<li><strong>Atenção:</strong> <em>The life is…</em> → <em>Life is…</em>; acento nome × verbo (<em>REcord/reCORD, OBject/obJECT</em>).</li>
+<li><strong>Input externo:</strong> <em>Planet Money</em>; TED.</li>
+</ul>
+<h3>Semana 23 · 16–22/03/2027 · Contratos I</h3>
+<ul>
+<li><strong>Gramática:</strong> <em>make, do, take, say, tell</em> em colocações; modais de obrigação no contrato (<em>shall, may, is entitled to, is required to</em>).</li>
+<li><strong>Vocabulário:</strong> <em>party, clause, term, breach, terminate, enforce, void/voidable</em>.</li>
+<li><strong>Função comunicativa:</strong> notificação formal por e-mail.</li>
+<li><strong>Atenção:</strong> schwa e formas fracas na frase (<em>to, of, can, was, and, for</em>).</li>
+<li><strong>Input externo:</strong> <em>Planet Money</em>.</li>
+</ul>
+<h3>Semana 24 · 23–29/03/2027 · Perguntas no tribunal</h3>
+<ul>
+<li><strong>Gramática:</strong> <em>question tags</em>; preposição no fim da pergunta (<em>What is it about?</em>).</li>
+<li><strong>Vocabulário:</strong> depoimento – <em>witness, testify, cross-examination, leading question, objection, sustained/overruled</em>.</li>
+<li><strong>Função comunicativa:</strong> 8 perguntas a um especialista + parágrafo.</li>
+<li><strong>Atenção:</strong> entonação (wh- descendente, yes/no ascendente).</li>
+<li><strong>Input externo:</strong> <strong>SCOTUS</strong> – primeira sustentação oral (argumento escolhido na lista do Term 2026; as perguntas dos Justices como modelo). <strong>Checkpoint T1/2027.</strong></li>
+</ul>
+<h3>Semana 25 · 30/03–05/04/2027 · Responsabilidade civil e incontáveis</h3>
+<ul>
+<li><strong>Gramática:</strong> incontáveis (<em>evidence, information, advice, damage</em>); quantificadores (<em>a piece of, much, little</em>).</li>
+<li><strong>Vocabulário:</strong> <em>liability, negligence, duty of care, causation, damage × damages</em>; <em>prejudice</em> ≠ prejuízo (prejuízo = <em>loss / damage</em>). Aproveita a EN-07 arquivada.</li>
+<li><strong>Função comunicativa:</strong> parágrafo argumentativo.</li>
+<li><strong>Atenção:</strong> <em>evidences</em> → <em>evidence / pieces of evidence</em>; /r/ inicial × /h/ (<em>red/head</em>).</li>
+<li><strong>Input externo:</strong> SCOTUS; <em>Planet Money</em>.</li>
+</ul>
+<h3>Semana 26 · 06–12/04/2027 · Condicionais 3 e mistas; banking I</h3>
+<ul>
+<li><strong>Gramática:</strong> condicional 3 e mistas; <em>should have / could have / would have</em> (aproveita a EN-03 arquivada).</li>
+<li><strong>Vocabulário:</strong> <em>loan, borrower, lender, interest rate, APR, installment, outstanding balance, default, collateral</em>.</li>
+<li><strong>Função comunicativa:</strong> e-mail a cliente estrangeiro com cenários (<em>if…</em>).</li>
+<li><strong>Atenção:</strong> <em>should of</em> → <em>should have</em>; contrações <em>would&#39;ve, should&#39;ve</em>.</li>
+<li><strong>Input externo:</strong> <em>Planet Money</em>; SCOTUS.</li>
+</ul>
+<h3>Semana 27 · 13–19/04/2027 · Fraude bancária</h3>
+<ul>
+<li><strong>Gramática:</strong> gerúndio × infinitivo avançado (<em>stop to / stop -ing; remember to / remember -ing; be used to -ing</em>).</li>
+<li><strong>Vocabulário:</strong> <em>identity theft, phishing, unauthorized transaction, chargeback, account takeover</em>.</li>
+<li><strong>Função comunicativa:</strong> alerta ao consumidor em <em>plain English</em>.</li>
+<li><strong>Atenção:</strong> linking consoante + vogal (<em>an account, turn it off</em>).</li>
+<li><strong>Input externo:</strong> <strong>CFPB</strong> (<em>Fraud and scams</em>); SCOTUS.</li>
+</ul>
+<h3>Semana 28 · 20–26/04/2027 · Proteção do consumidor</h3>
+<ul>
+<li><strong>Gramática:</strong> passiva avançada (<em>get</em>-passive, passiva com modal) e nominalização.</li>
+<li><strong>Vocabulário:</strong> <em>unfair terms, disclosure, fine print, class action, regulator</em>.</li>
+<li><strong>Função comunicativa:</strong> parecer curto (200 palavras).</li>
+<li><strong>Atenção:</strong> -s final em três sons (/s/, /z/, /ɪz/) em palavras longas.</li>
+<li><strong>Input externo:</strong> CFPB; SCOTUS.</li>
+</ul>
+<h3>Semana 29 · 27/04–03/05/2027 · Dedução e obrigação</h3>
+<ul>
+<li><strong>Gramática:</strong> modais de dedução (<em>must have, can&#39;t have, might have</em>); <em>must / have to / mustn&#39;t / don&#39;t have to</em> no registro formal.</li>
+<li><strong>Vocabulário:</strong> obrigação e permissão contratual.</li>
+<li><strong>Função comunicativa:</strong> analisar uma situação e tirar conclusões.</li>
+<li><strong>Atenção:</strong> ritmo acentual (<em>stress-timed</em>): frases na batida.</li>
+<li><strong>Input externo:</strong> TED; <em>Planet Money</em>.</li>
+</ul>
+<h3>Semana 30 · 04–10/05/2027 · Common law × civil law</h3>
+<ul>
+<li><strong>Gramática:</strong> relativas com e sem vírgula (<em>which/that</em>); contraste (<em>whereas, while, unlike, as opposed to</em>).</li>
+<li><strong>Vocabulário:</strong> <em>statute, code, case law, precedent, stare decisis, binding × persuasive authority, adversarial × inquisitorial, jury, bench, bar, judge × justice</em>.</li>
+<li><strong>Função comunicativa:</strong> comparar Brasil × EUA (fatos dele).</li>
+<li><strong>Atenção:</strong> acento em <em>-tion/-sion</em>.</li>
+<li><strong>Input externo:</strong> SCOTUS.</li>
+</ul>
+<h3>Semana 31 · 11–17/05/2027 · Litígio nos EUA e decisões</h3>
+<ul>
+<li><strong>Gramática:</strong> <em>past perfect</em> e sequência temporal; discurso indireto com verbos de relato (<em>hold, find, rule, reason, conclude, note</em>).</li>
+<li><strong>Vocabulário:</strong> <em>pleadings, motion to dismiss, discovery, deposition, summary judgment, trial, verdict; affirm, reverse, remand, majority opinion, dissent</em>.</li>
+<li><strong>Função comunicativa:</strong> resumo em inglês de uma decisão brasileira.</li>
+<li><strong>Atenção:</strong> números, datas e valores ditos em voz alta (<em>$10.5 million</em>).</li>
+<li><strong>Input externo:</strong> SCOTUS + leitura do <em>syllabus</em> de uma <em>opinion</em>.</li>
+</ul>
+<h3>Semana 32 · 18–24/05/2027 · Contratos II e III</h3>
+<ul>
+<li><strong>Gramática:</strong> <em>shall/will/may</em> no <em>drafting</em>; inversão condicional (<em>Should the borrower default…; Had the bank verified…</em>); <em>legalese</em> × <em>plain English</em>.</li>
+<li><strong>Vocabulário:</strong> <em>recitals, boilerplate, representations and warranties, indemnify, governing law, force majeure, remedies, liquidated damages, specific performance</em>.</li>
+<li><strong>Função comunicativa:</strong> explicar uma cláusula ao cliente por e-mail.</li>
+<li><strong>Atenção:</strong> palavras longas (<em>enforceability, indemnification, liability</em>).</li>
+<li><strong>Input externo:</strong> <em>Planet Money</em>; SCOTUS.</li>
+</ul>
+<h3>Semana 33 · 25–31/05/2027 · Consumer &amp; banking law</h3>
+<ul>
+<li><strong>Gramática:</strong> <em>hedging</em> leve (<em>it appears that, arguably</em>); clivadas (<em>What the bank failed to prove was…</em>).</li>
+<li><strong>Vocabulário:</strong> <em>credit, overdraft, debt collection, credit report, burden of proof, shifting the burden, vulnerable consumers, unfair practices</em>; &quot;consignado&quot; sem equivalente direto – aproximação a combinar na lição.</li>
+<li><strong>Função comunicativa:</strong> explicar um direito do consumidor brasileiro a um estrangeiro (fatos dele).</li>
+<li><strong>Atenção:</strong> ênfase por clivada na fala.</li>
+<li><strong>Input externo:</strong> <em>Planet Money</em> + CFPB.</li>
+</ul>
+<h3>Semana 34 · 01–07/06/2027 · Revisão do B2</h3>
+<ul>
+<li><strong>Gramática:</strong> revisão das semanas 21–33 pelos erros registrados.</li>
+<li><strong>Vocabulário:</strong> reciclagem dos decks 21–33.</li>
+<li><strong>Função comunicativa:</strong> pitch de 3 min sobre a área dele, gravado.</li>
+<li><strong>Atenção:</strong> os padrões de <code>Erros.md</code>.</li>
+<li><strong>Input externo:</strong> SCOTUS. <strong>Checkpoint B2:</strong> <strong>EF SET 90 min</strong> + autoavaliação Europass B2 + fala de 5 min.</li>
+</ul>
+<h2>C1 – trilha acadêmica e fluência (semanas 35–48)</h2>
+<p>Temas dos blocos 2 a 4 do programa arquivado. A tradução de texto para publicar continua com o <code>tradutor-academico</code>; aqui o texto é dele e se corrige.</p>
+<h3>Semana 35 · 08–14/06/2027 · Negociar e escrever memo</h3>
+<ul>
+<li><strong>Gramática:</strong> linguagem de negociação (<em>I&#39;m afraid…; we&#39;d be prepared to…</em>); concisão e <em>doublets</em> (<em>null and void</em>).</li>
+<li><strong>Vocabulário:</strong> <em>mediation, settlement, counteroffer, without prejudice, binding arbitration</em>; memo (<em>question presented, brief answer, facts, discussion, conclusion</em>; IRAC).</li>
+<li><strong>Função comunicativa:</strong> negociação simulada (<code>/conversa</code>) e memo de 200 palavras.</li>
+<li><strong>Atenção:</strong> franqueza brasileira × indireto do inglês na negociação.</li>
+<li><strong>Input externo:</strong> <em>Planet Money</em>; SCOTUS.</li>
+</ul>
+<h3>Semana 36 · 15–21/06/2027 · Anatomia do paper e abstract</h3>
+<ul>
+<li><strong>Gramática:</strong> tempos do abstract (presente para a tese, passado para o que se fez).</li>
+<li><strong>Vocabulário:</strong> <em>moves</em> do abstract; Phrasebank &quot;Introducing work&quot;.</li>
+<li><strong>Função comunicativa:</strong> abstract de 200 palavras de um texto dele.</li>
+<li><strong>Atenção:</strong> <em>research</em> é incontável (<em>researches</em> → <em>research / studies</em>); <em>I did a research</em> → <em>I did some research / I carried out a study</em>.</li>
+<li><strong>Input externo:</strong> <strong>Academic Phrasebank</strong>; TED. <strong>Checkpoint T2/2027.</strong></li>
+</ul>
+<h3>Semana 37 · 22–28/06/2027 · Introdução e revisão de literatura</h3>
+<ul>
+<li><strong>Gramática:</strong> sinalizar lacuna e objetivo; tempos da citação; citação integral × não integral.</li>
+<li><strong>Vocabulário:</strong> <em>gap, aim, contribution; argue, contend, claim, suggest, demonstrate</em>; Phrasebank &quot;Referring to sources&quot;; modelo CARS <code>[CONFERIR]</code>.</li>
+<li><strong>Função comunicativa:</strong> parágrafo de introdução + síntese de 3 autores que ele leu; perguntas sobre pesquisa (aproveita a EN-05 arquivada).</li>
+<li><strong>Atenção:</strong> <em>According to Silva (2020), he argues…</em> → <em>Silva (2020) argues…</em> (sujeito dobrado).</li>
+<li><strong>Input externo:</strong> Phrasebank; SCOTUS.</li>
+</ul>
+<h3>Semana 38 · 29/06–05/07/2027 · Cautela, crítica, métodos</h3>
+<ul>
+<li><strong>Gramática:</strong> <em>hedging</em> × <em>boosting</em>; passiva no método.</li>
+<li><strong>Vocabulário:</strong> Phrasebank &quot;Being cautious&quot;, &quot;Being critical&quot;, &quot;Describing trends/quantities&quot;; <em>doctrinal, empirical, comparative, case study</em>.</li>
+<li><strong>Função comunicativa:</strong> crítica a um argumento; descrever um gráfico em voz alta.</li>
+<li><strong>Atenção:</strong> excesso de certeza (<em>This proves that…</em> → <em>This suggests that…</em>).</li>
+<li><strong>Input externo:</strong> Phrasebank; TED.</li>
+</ul>
+<h3>Semana 39 · 06–12/07/2027 · Discussão, conclusão e correspondência</h3>
+<ul>
+<li><strong>Gramática:</strong> coesão e paralelismo; polidez escrita.</li>
+<li><strong>Vocabulário:</strong> Phrasebank &quot;Discussing findings&quot;, &quot;Writing conclusions&quot;; resposta a pareceristas (<em>We thank the reviewer…; we have revised…</em>).</li>
+<li><strong>Função comunicativa:</strong> conclusão de 200 palavras e e-mail a professor estrangeiro.</li>
+<li><strong>Atenção:</strong> conectores de tradução literal (<em>In this sense</em> em excesso).</li>
+<li><strong>Input externo:</strong> Phrasebank; <em>Planet Money</em>.</li>
+</ul>
+<h3>Semana 40 · 13–19/07/2027 · Congresso</h3>
+<ul>
+<li><strong>Gramática:</strong> <em>signposting</em> (<em>Let me turn to…; As you can see…</em>); <em>sentence stress</em> e <em>chunking</em>.</li>
+<li><strong>Vocabulário:</strong> <em>roadmap, This slide shows…, To sum up…</em>.</li>
+<li><strong>Função comunicativa:</strong> abertura de 2 min e <strong>3MT da tese (3 min, fatos dele)</strong>, gravados.</li>
+<li><strong>Atenção:</strong> ritmo – pausas por bloco de sentido, não por palavra.</li>
+<li><strong>Input externo:</strong> 3MT (UQ) <code>[CONFERIR]</code> vídeos; TED.</li>
+</ul>
+<h3>Semana 41 · 20–26/07/2027 · Q&amp;A e banca</h3>
+<ul>
+<li><strong>Gramática:</strong> reformular a pergunta; ganhar tempo; admitir limite; discordar com cortesia.</li>
+<li><strong>Vocabulário:</strong> <em>That&#39;s a fair point; I haven&#39;t looked at that, but…; chairing a panel</em>.</li>
+<li><strong>Função comunicativa:</strong> simulação de banca em inglês (<code>/conversa</code>).</li>
+<li><strong>Atenção:</strong> responder sim/não direto antes de explicar.</li>
+<li><strong>Input externo:</strong> SCOTUS (o argumento oral é Q&amp;A puro).</li>
+</ul>
+<h3>Semana 42 · 27/07–02/08/2027 · Phrasal verbs I e II</h3>
+<ul>
+<li><strong>Gramática:</strong> partícula e objeto (<em>turn it down</em>, nunca <em>turn down it</em>); separáveis × inseparáveis.</li>
+<li><strong>Vocabulário:</strong> <em>carry out, set up, look into, rule out, follow up, put off; pay off, pay back, take out (a loan), sign up, opt out, write off</em>.</li>
+<li><strong>Função comunicativa:</strong> e-mail informal a colega; relato de caso (sem dado de cliente).</li>
+<li><strong>Atenção:</strong> acento na partícula (<em>set UP</em>).</li>
+<li><strong>Input externo:</strong> <em>Planet Money</em>; SCOTUS.</li>
+</ul>
+<h3>Semana 43 · 03–09/08/2027 · Phrasal verbs III e idioms</h3>
+<ul>
+<li><strong>Gramática:</strong> registro informal × formal (<em>find out</em> × <em>discover</em>).</li>
+<li><strong>Vocabulário:</strong> <em>point out, figure out, come up with, sort out</em>; idioms de trabalho e direito (<em>the ball is in your court, on the same page, the bottom line, a loophole, above board</em>).</li>
+<li><strong>Função comunicativa:</strong> e-mail de negociação; opinião de 200 palavras.</li>
+<li><strong>Atenção:</strong> idiom só quando o registro permite.</li>
+<li><strong>Input externo:</strong> TED; <em>Planet Money</em>.</li>
+</ul>
+<h3>Semana 44 · 10–16/08/2027 · Connected speech</h3>
+<ul>
+<li><strong>Gramática:</strong> linking, elisão (<em>next day</em>), assimilação (<em>would you</em> → /wʊdʒu/), formas fracas em fala rápida; entonação e atitude.</li>
+<li><strong>Vocabulário:</strong> –</li>
+<li><strong>Função comunicativa:</strong> <em>shadowing</em> de TED e de <em>Planet Money</em>.</li>
+<li><strong>Atenção:</strong> a vogal epentética que ainda sobrar (registrada em <code>Erros.md</code>).</li>
+<li><strong>Input externo:</strong> <em>Planet Money</em> (fala não roteirizada); TED. Sotaque britânico: fonte <code>[CONFERIR]</code>.</li>
+</ul>
+<h3>Semana 45 · 17–23/08/2027 · Marcadores e registro</h3>
+<ul>
+<li><strong>Gramática:</strong> marcadores do discurso (<em>well, I mean, to be fair, that said, anyway</em>); polidez (<em>Would you mind…; I was wondering if…</em>).</li>
+<li><strong>Vocabulário:</strong> <em>small talk</em> e <em>networking</em> em congresso.</li>
+<li><strong>Função comunicativa:</strong> simulação de <em>networking</em>; e-mail formal × informal do mesmo pedido.</li>
+<li><strong>Atenção:</strong> muleta brasileira traduzida (<em>so, so, so</em>; <em>né</em> → <em>right?</em> em excesso).</li>
+<li><strong>Input externo:</strong> TED; <em>Planet Money</em>.</li>
+</ul>
+<h3>Semana 46 · 24–30/08/2027 · Storytelling e debate</h3>
+<ul>
+<li><strong>Gramática:</strong> <em>past continuous</em> e <em>past perfect</em> na narrativa; conceder e refutar (<em>Granted, … but; That may be true, however; I&#39;d push back on that</em>).</li>
+<li><strong>Vocabulário:</strong> –</li>
+<li><strong>Função comunicativa:</strong> caso contado em 3 min (sem dado de cliente) e debate com o tutor (<code>/conversa</code>).</li>
+<li><strong>Atenção:</strong> os padrões de <code>Erros.md</code> de fala.</li>
+<li><strong>Input externo:</strong> <em>Planet Money</em>; SCOTUS.</li>
+</ul>
+<h3>Semana 47 · 31/08–06/09/2027 · Revisão do C1</h3>
+<ul>
+<li><strong>Gramática:</strong> revisão das semanas 35–46 pelos erros registrados.</li>
+<li><strong>Vocabulário:</strong> reciclagem dos decks 35–46.</li>
+<li><strong>Função comunicativa:</strong> apresentação de 10 min + Q&amp;A simulado, gravados.</li>
+<li><strong>Atenção:</strong> os padrões de <code>Erros.md</code> do ano.</li>
+<li><strong>Input externo:</strong> SCOTUS; TED.</li>
+</ul>
+<h3>Semana 48 · 07–13/09/2027 · Checkpoint final</h3>
+<ul>
+<li><strong>Gramática:</strong> –</li>
+<li><strong>Vocabulário:</strong> –</li>
+<li><strong>Função comunicativa:</strong> gravação de 5 min comparada à da S4; texto de 300 palavras.</li>
+<li><strong>Atenção:</strong> plano do ano seguinte a partir de <code>Erros.md</code>.</li>
+<li><strong>Input externo:</strong> <strong>EF SET 90 min</strong> + autoavaliação Europass C1 (e C2 na leitura). <strong>Checkpoint T3/2027.</strong></li>
+</ul>
+<h2>Pendências <code>[CONFERIR]</code></h2>
+<ol>
+<li>Metas CEFR por trimestre: valem as do programa aprovado em 12/10/2026 até o primeiro checkpoint (S1); gravar em Metas quando Vinicius quiser.</li>
+<li>Recursos marcados <code>[CONFERIR]</code> acima, a conferir na semana em que entram (VOA <em>Level 2</em> e transcrições; duração do teste do British Council; TED da semana; 3MT; CARS).</li>
+<li>Anki não instalado: SRS pelo TSV, sem agendamento espaçado de verdade.</li>
+<li>A justificativa de horários da Semana-tipo ainda fala em &quot;inglês avançado&quot;; a grade (dias e janelas) segue válida.</li>
+</ol>
+</main></body></html>

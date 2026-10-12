@@ -1,0 +1,156 @@
+<!doctype html>
+<html lang="pt-BR"><head><meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1,viewport-fit=cover">
+<meta name="color-scheme" content="light dark">
+<title>ES-01 · Muy o mucho, falsos amigos e gênero</title>
+<style>
+:root{--bg:#f7f5f0;--card:#fff;--ink:#1d2330;--mut:#6b7280;--line:#e6e1d6;--acc:#c2410c;--acc2:#e8a33d;
+--ok:#2f9e5b;--okbg:#e7f6ec;--err:#d64545;--errbg:#fdeaea;--tile:#fff;--sh:0 2px 0 var(--line)}
+@media (prefers-color-scheme:dark){:root{--bg:#12151c;--card:#1b2029;--ink:#eef0f4;--mut:#9aa3b2;--line:#2c3340;
+--okbg:#163323;--errbg:#3a1b1b;--tile:#222835}}
+*{box-sizing:border-box;-webkit-tap-highlight-color:transparent}
+html,body{margin:0;background:var(--bg);color:var(--ink);font:17px/1.45 -apple-system,BlinkMacSystemFont,"Segoe UI",Roboto,system-ui,sans-serif}
+.app{max-width:640px;margin:0 auto;min-height:100dvh;display:flex;flex-direction:column;padding:env(safe-area-inset-top) 16px 0}
+header{display:flex;align-items:center;gap:12px;padding:14px 0 8px}
+.x{border:0;background:none;color:var(--mut);font-size:22px;cursor:pointer}
+.bar{flex:1;height:14px;background:var(--line);border-radius:99px;overflow:hidden}
+.bar i{display:block;height:100%;width:0;background:linear-gradient(90deg,var(--acc),var(--acc2));border-radius:99px;transition:width .4s}
+.xp{font-weight:700;color:var(--acc);min-width:58px;text-align:right}
+main{flex:1;padding:12px 0 24px}
+.tag{display:inline-block;font-size:12px;letter-spacing:.08em;text-transform:uppercase;color:var(--acc);font-weight:700;margin-bottom:6px}
+h1{font-size:22px;margin:0 0 16px;line-height:1.3}
+h2{font-size:24px;margin:4px 0 12px}
+.dica{background:var(--card);border:1px solid var(--line);border-radius:18px;padding:18px 18px 8px;box-shadow:var(--sh)}
+.dica p,.dica li{margin:0 0 10px}.dica b{color:var(--acc)}
+.dica table{width:100%;border-collapse:collapse;margin:6px 0 12px;font-size:15px}
+.dica td{padding:7px 6px;border-top:1px solid var(--line)}.dica td:first-child{font-weight:600}
+.ex{color:var(--mut);font-style:italic}
+.opts{display:grid;gap:10px}
+.opt,.tile,.pair{background:var(--tile);border:2px solid var(--line);border-bottom-width:4px;border-radius:14px;padding:13px 14px;
+font:inherit;color:inherit;text-align:left;cursor:pointer;transition:transform .05s}
+.opt:active,.tile:active,.pair:active{transform:translateY(2px)}
+.opt.sel,.pair.sel{border-color:var(--acc);background:color-mix(in srgb,var(--acc) 12%,var(--tile))}
+.pair.done{opacity:.35;pointer-events:none;border-color:var(--ok)}
+.pair.bad{border-color:var(--err);animation:sh .3s}
+@keyframes sh{25%{transform:translateX(-4px)}75%{transform:translateX(4px)}}
+.frase{font-size:20px;background:var(--card);border:1px solid var(--line);border-radius:16px;padding:14px 16px;margin-bottom:16px;display:flex;gap:10px;align-items:center}
+.som{border:0;background:var(--acc);color:#fff;border-radius:12px;width:46px;height:46px;font-size:20px;cursor:pointer;flex:none}
+.som.lento{background:var(--acc2);font-size:15px}
+.linha{min-height:64px;border-bottom:2px solid var(--line);display:flex;flex-wrap:wrap;gap:8px;padding:8px 0;margin-bottom:18px}
+.banco{display:flex;flex-wrap:wrap;gap:8px}
+.tile{padding:9px 13px}.tile.usado{visibility:hidden}
+textarea{width:100%;min-height:96px;font:inherit;padding:12px;border-radius:14px;border:2px solid var(--line);background:var(--tile);color:var(--ink);resize:vertical}
+.pares{display:grid;grid-template-columns:1fr 1fr;gap:10px}
+.pares div{display:grid;gap:10px;align-content:start}
+.mic{display:block;margin:18px auto;width:96px;height:96px;border-radius:50%;border:0;background:var(--acc);color:#fff;font-size:38px;cursor:pointer;box-shadow:0 5px 0 color-mix(in srgb,var(--acc) 60%,#000)}
+.mic.on{animation:pulse 1s infinite}
+@keyframes pulse{50%{box-shadow:0 0 0 14px color-mix(in srgb,var(--acc) 25%,transparent)}}
+.ouvi{text-align:center;color:var(--mut);min-height:24px}
+footer{position:sticky;bottom:0;padding:14px 16px calc(14px + env(safe-area-inset-bottom));margin:0 -16px;background:var(--bg);border-top:1px solid var(--line)}
+footer.ok{background:var(--okbg);border-color:transparent}footer.err{background:var(--errbg);border-color:transparent}
+.fb{display:none;margin-bottom:12px}.fb b{font-size:18px}.fb p{margin:4px 0 0;font-size:15px}
+footer.ok .fb,footer.err .fb{display:block}footer.ok .fb b{color:var(--ok)}footer.err .fb b{color:var(--err)}
+.btn{width:100%;border:0;border-radius:16px;padding:15px;font:700 17px/1 inherit;letter-spacing:.04em;text-transform:uppercase;color:#fff;
+background:var(--acc);box-shadow:0 4px 0 color-mix(in srgb,var(--acc) 60%,#000);cursor:pointer}
+.btn:disabled{background:var(--line);color:var(--mut);box-shadow:none;cursor:default}
+footer.ok .btn{background:var(--ok);box-shadow:0 4px 0 #1f6e3f}footer.err .btn{background:var(--err);box-shadow:0 4px 0 #9b2c2c}
+.sec{background:none;border:0;color:var(--mut);width:100%;margin-top:10px;font:inherit;cursor:pointer;text-decoration:underline}
+.fim{text-align:center;padding-top:20px}.fim .big{font-size:64px;margin:6px}
+.stats{display:grid;grid-template-columns:repeat(3,1fr);gap:10px;margin:20px 0}
+.stats div{background:var(--card);border:2px solid var(--line);border-radius:14px;padding:12px 6px}
+.stats b{display:block;font-size:24px;color:var(--acc)}.stats span{font-size:13px;color:var(--mut)}
+.erros{text-align:left;background:var(--card);border:1px solid var(--line);border-radius:16px;padding:12px 16px;font-size:15px}
+.erros li{margin:6px 0}
+#semjs{padding:30px;text-align:center}
+</style></head><body>
+<div id="semjs">Abra este arquivo no navegador (Safari ou Chrome) para fazer a lição: toque em compartilhar › abrir no navegador.</div>
+<div class="app" id="app" hidden>
+<header><button class="x" id="sair" aria-label="Recomeçar">✕</button><div class="bar"><i id="prog"></i></div><div class="xp" id="xp">0 XP</div></header>
+<main id="main"></main>
+<footer id="foot"><div class="fb" id="fb"></div><button class="btn" id="go" disabled>Verificar</button><button class="sec" id="pular" hidden>Não posso falar agora</button></footer>
+</div>
+<script>
+const L={"id": "ES-01", "titulo": "Muy o mucho, falsos amigos e gênero", "lingua": "espanhol", "voz": "es-ES", "data": "2026-10-12", "itens": [{"tipo": "dica", "rotulo": "Lição 1 · 1/3", "titulo": "Muy ou mucho?", "html": "<p><b>Muy<\/b> vem antes de adjetivo ou advérbio e nunca muda: <span class='ex'>muy bueno, muy bien, muy tarde<\/span>.<\/p><p><b>Mucho<\/b> vem antes de substantivo e concorda com ele: <span class='ex'>mucho trabajo, mucha gente, muchos libros, muchas horas<\/span>. Depois de verbo, também <b>mucho<\/b>: <span class='ex'>trabajo mucho<\/span>.<\/p><p>Exceção: antes de <b>mejor, peor, más, menos, mayor, menor<\/b> usa-se <b>mucho<\/b>: <span class='ex'>mucho mejor<\/span>.<\/p>"}, {"tipo": "escolha", "pergunta": "Hoy estoy ___ cansado.", "opcoes": ["muy", "mucho"], "certa": 0, "explica": "Cansado é adjetivo: muy."}, {"tipo": "escolha", "pergunta": "Tengo ___ trabajo esta semana.", "opcoes": ["mucho", "mucha", "muy"], "certa": 0, "explica": "Trabajo é substantivo masculino: mucho."}, {"tipo": "escolha", "pergunta": "Hay ___ gente en el foro.", "opcoes": ["mucha", "mucho", "muy"], "certa": 0, "explica": "Gente é feminino: mucha gente."}, {"tipo": "escolha", "pergunta": "Esta solución es ___ mejor.", "opcoes": ["mucho", "muy"], "certa": 0, "explica": "Antes de mejor, sempre mucho."}, {"tipo": "digitar", "pergunta": "Eu trabalho muito.", "respostas": ["Trabajo mucho", "Yo trabajo mucho"], "explica": "Depois de verbo: mucho."}, {"tipo": "montar", "pergunta": "O juiz foi muito claro.", "resposta": "El juez fue muy claro", "extras": ["mucho", "La"]}, {"tipo": "dica", "rotulo": "Lição 1 · 2/3", "titulo": "Falsos amigos", "html": "<p>Parecem português, mas significam outra coisa:<\/p><table><tr><td>oficina<\/td><td>escritório<\/td><\/tr><tr><td>apellido<\/td><td>sobrenome<\/td><\/tr><tr><td>borrar<\/td><td>apagar<\/td><\/tr><tr><td>rato<\/td><td>um momento, um pouco de tempo<\/td><\/tr><tr><td>cena<\/td><td>jantar<\/td><\/tr><tr><td>exquisito<\/td><td>delicioso<\/td><\/tr><tr><td>embarazada<\/td><td>grávida<\/td><\/tr><\/table>"}, {"tipo": "pares", "pares": [["oficina", "escritório"], ["apellido", "sobrenome"], ["borrar", "apagar"], ["rato", "momento"], ["cena", "jantar"], ["exquisito", "delicioso"]]}, {"tipo": "escolha", "pergunta": "“Mi oficina está en el centro.” Onde fica?", "opcoes": ["Meu escritório", "Minha oficina mecânica", "Meu consultório"], "certa": 0}, {"tipo": "escolha", "pergunta": "“¿Cuál es tu apellido?” Perguntam o seu…", "opcoes": ["sobrenome", "apelido", "nome"], "certa": 0}, {"tipo": "escolha", "pergunta": "“Voy a borrar el archivo.” Ele vai…", "opcoes": ["apagar o arquivo", "rasurar o arquivo", "guardar o arquivo"], "certa": 0}, {"tipo": "dica", "rotulo": "Lição 1 · 3/3", "titulo": "O gênero que muda", "html": "<p>Algumas palavras trocam de gênero do português para o espanhol:<\/p><table><tr><td>la leche<\/td><td>o leite<\/td><\/tr><tr><td>la sangre<\/td><td>o sangue<\/td><\/tr><tr><td>la nariz<\/td><td>o nariz<\/td><\/tr><tr><td>la miel<\/td><td>o mel<\/td><\/tr><tr><td>el puente<\/td><td>a ponte<\/td><\/tr><tr><td>el árbol<\/td><td>a árvore<\/td><\/tr><tr><td>el color<\/td><td>a cor<\/td><\/tr><\/table><p>E as terminadas em <b>-aje<\/b> são masculinas: <span class='ex'>el viaje, el mensaje, el paisaje<\/span>.<\/p>"}, {"tipo": "escolha", "pergunta": "___ leche está fría.", "opcoes": ["La", "El"], "certa": 0}, {"tipo": "escolha", "pergunta": "___ viaje fue largo.", "opcoes": ["El", "La"], "certa": 0, "explica": "-aje é masculino."}, {"tipo": "escolha", "pergunta": "Cruzamos ___ puente a pie.", "opcoes": ["el", "la"], "certa": 0}, {"tipo": "pares", "pares": [["el mensaje", "a mensagem"], ["la sangre", "o sangue"], ["el árbol", "a árvore"], ["la nariz", "o nariz"], ["el color", "a cor"]]}, {"tipo": "ouvir", "texto": "Tengo mucho trabajo en la oficina."}, {"tipo": "ouvir", "texto": "El viaje fue muy largo."}, {"tipo": "montar", "pergunta": "A mensagem é muito importante.", "resposta": "El mensaje es muy importante", "extras": ["La", "mucho"]}, {"tipo": "digitar", "pergunta": "Qual é o seu sobrenome?", "respostas": ["¿Cuál es tu apellido?", "¿Cuál es su apellido?"]}, {"tipo": "falar", "texto": "Mucho gusto, me llamo Vinicius y soy abogado.", "traducao": "Muito prazer, eu me chamo Vinicius e sou advogado."}, {"tipo": "falar", "texto": "Hoy tengo mucho trabajo, pero estoy muy contento.", "traducao": "Hoje tenho muito trabalho, mas estou muito contente."}]};
+document.getElementById('semjs').remove();document.getElementById('app').hidden=false;
+const $=s=>document.querySelector(s),M=$('#main'),F=$('#foot'),FB=$('#fb'),GO=$('#go'),PU=$('#pular');
+let fila=L.itens.map((x,i)=>({...x,_i:i})),pos=0,xp=0,erros=[],acertos=0,totalEx=0,t0=Date.now(),errados=new Set(),checar=null,estado='q',pulados=0;
+const norm=(s,ac)=>{s=(s||'').toLowerCase().replace(/[¿¡?!.,;:"“”«»()]/g,' ').replace(/[’']/g,"'").replace(/\s+/g,' ').trim();
+ return ac?s:s.normalize('NFD').replace(/[̀-ͯ]/g,'')};
+const emb=a=>{a=[...a];for(let i=a.length-1;i>0;i--){const j=Math.random()*(i+1)|0;[a[i],a[j]]=[a[j],a[i]]}return a};
+const esc=s=>String(s).replace(/[&<>]/g,c=>({'&':'&amp;','<':'&lt;','>':'&gt;'}[c]));
+function falar(txt,lento){try{speechSynthesis.cancel();const u=new SpeechSynthesisUtterance(txt);u.lang=L.voz;u.rate=lento?.6:.92;
+ const v=speechSynthesis.getVoices().filter(v=>v.lang.replace('_','-').startsWith(L.voz.slice(0,2)));const p=v.find(v=>v.lang.replace('_','-')===L.voz)||v[0];if(p)u.voice=p;speechSynthesis.speak(u)}catch(e){}}
+if(window.speechSynthesis)speechSynthesis.onvoiceschanged=()=>{};
+const somBtns=t=>`<button class="som" onclick="falar(${esc(JSON.stringify(t)).replace(/"/g,'&quot;')})">🔊</button><button class="som lento" onclick="falar(${esc(JSON.stringify(t)).replace(/"/g,'&quot;')},1)">🐢</button>`;
+function pronto(ok){GO.disabled=!ok}
+function render(){
+ const it=fila[pos];estado='q';F.className='';FB.innerHTML='';GO.textContent='Verificar';PU.hidden=true;pronto(false);checar=null;
+ $('#prog').style.width=(pos/fila.length*100)+'%';
+ const rev=it._rev?'<span class="tag">Revisão do erro</span><br>':'';
+ if(it.tipo==='dica'){M.innerHTML=`<span class="tag">${esc(it.rotulo||'Dica')}</span><div class="dica"><h2>${esc(it.titulo)}</h2>${it.html}</div>`;
+  GO.textContent='Continuar';pronto(true);estado='dica';return}
+ if(it.tipo==='leitura'){M.innerHTML=`<span class="tag">${esc(it.rotulo||'Leitura')}</span><div class="dica"><h2>${esc(it.titulo)}</h2><div class="frase" style="border:0;padding:0;background:none">${somBtns(it.texto)}<span class="ex">Ouça e acompanhe</span></div><p style="font-size:19px;line-height:1.6">${esc(it.texto)}</p>${it.glossario?`<table>${it.glossario.map(g=>`<tr><td>${esc(g[0])}</td><td>${esc(g[1])}</td></tr>`).join('')}</table>`:''}</div>`;
+  GO.textContent='Continuar';pronto(true);estado='dica';return}
+ totalEx++;
+ if(it.tipo==='escolha'){const ops=emb(it.opcoes.map((o,i)=>({o,i})));
+  M.innerHTML=`${rev}<span class="tag">Escolha a certa</span><h1>${esc(it.pergunta)}</h1>${it.audio?`<div class="frase">${somBtns(it.audio)}<span>${esc(it.audio)}</span></div>`:''}<div class="opts">${ops.map(x=>`<button class="opt" data-i="${x.i}">${esc(x.o)}</button>`).join('')}</div>`;
+  let sel=null;M.querySelectorAll('.opt').forEach(b=>b.onclick=()=>{M.querySelectorAll('.opt').forEach(c=>c.classList.remove('sel'));b.classList.add('sel');sel=+b.dataset.i;pronto(true);if(L.falarOpcoes&&it.audio==null)falar(b.textContent)});
+  checar=()=>[sel===it.certa,it.opcoes[it.certa]];}
+ if(it.tipo==='montar'){const pal=it.resposta.split(' '),ts=emb([...pal,...(it.extras||[])]);
+  M.innerHTML=`${rev}<span class="tag">Monte a frase</span><h1>${esc(it.pergunta)}</h1><div class="linha" id="lin"></div><div class="banco">${ts.map((t,i)=>`<button class="tile" data-i="${i}">${esc(t)}</button>`).join('')}</div>`;
+  const lin=$('#lin'),esc2=[];M.querySelectorAll('.banco .tile').forEach(b=>b.onclick=()=>{b.classList.add('usado');const c=document.createElement('button');c.className='tile';c.textContent=b.textContent;
+   c.onclick=()=>{c.remove();b.classList.remove('usado');pronto(lin.children.length>0)};lin.appendChild(c);falar(b.textContent);pronto(true)});
+  checar=()=>{const r=[...lin.children].map(c=>c.textContent).join(' ');const acc=[it.resposta,...(it.aceitas||[])];return [acc.some(a=>norm(a,1)===norm(r,1)),it.resposta]};}
+ if(it.tipo==='digitar'||it.tipo==='ouvir'){
+  const topo=it.tipo==='ouvir'?`<span class="tag">Escute e escreva</span><h1>Escreva o que você ouvir</h1><div class="frase" style="justify-content:center">${somBtns(it.texto)}</div>`
+   :`<span class="tag">Traduza</span><h1>${esc(it.pergunta)}</h1>`;
+  M.innerHTML=`${rev}${topo}<textarea id="tx" placeholder="${it.tipo==='ouvir'?'Digite aqui':'Escreva em '+L.lingua}" autocapitalize="sentences" spellcheck="false"></textarea>`;
+  const tx=$('#tx');tx.oninput=()=>pronto(tx.value.trim().length>0);if(it.tipo==='ouvir')setTimeout(()=>falar(it.texto),400);
+  checar=()=>{const acc=it.tipo==='ouvir'?[it.texto]:it.respostas;const v=tx.value;
+   if(acc.some(a=>norm(a,1)===norm(v,1)))return [true,acc[0]];
+   if(acc.some(a=>norm(a)===norm(v)))return [true,acc[0],'Quase perfeito: confira os acentos.'];return [false,acc[0]]};}
+ if(it.tipo==='pares'){const E=emb(it.pares.map((p,i)=>({t:p[0],i}))),D=emb(it.pares.map((p,i)=>({t:p[1],i})));
+  M.innerHTML=`<span class="tag">Ligue os pares</span><h1>${esc(it.pergunta||'Toque nos pares correspondentes')}</h1><div class="pares"><div>${E.map(x=>`<button class="pair" data-l="e" data-i="${x.i}">${esc(x.t)}</button>`).join('')}</div><div>${D.map(x=>`<button class="pair" data-l="d" data-i="${x.i}">${esc(x.t)}</button>`).join('')}</div></div>`;
+  let a=null,feitos=0,errou=false;M.querySelectorAll('.pair').forEach(b=>b.onclick=()=>{if(b.dataset.l==='e')falar(b.textContent);
+   if(!a||a.dataset.l===b.dataset.l){M.querySelectorAll('.pair.sel').forEach(c=>c.classList.remove('sel'));b.classList.add('sel');a=b;return}
+   if(a.dataset.i===b.dataset.i){a.classList.replace('sel','done');b.classList.add('done');feitos++;a=null;if(feitos===it.pares.length){pronto(true);checar=()=>[!errou,''];}}
+   else{errou=true;[a,b].forEach(c=>{c.classList.remove('sel');c.classList.add('bad');setTimeout(()=>c.classList.remove('bad'),350)});a=null}});}
+ if(it.tipo==='falar'){const SR=window.SpeechRecognition||window.webkitSpeechRecognition;
+  M.innerHTML=`<span class="tag">Fale em voz alta</span><h1>Leia a frase em voz alta</h1><div class="frase">${somBtns(it.texto)}<span>${esc(it.texto)}</span></div>
+  ${it.traducao?`<p class="ex">${esc(it.traducao)}</p>`:''}<button class="mic" id="mic">🎤</button><div class="ouvi" id="ouvi">${SR?'Toque no microfone e fale':'Seu navegador não reconhece fala aqui: ouça, repita em voz alta 2 vezes e toque em Verificar.'}</div>`;
+  PU.hidden=false;let ouvido='';
+  if(!SR){pronto(true);checar=()=>[true,'','Autoavaliação: repetiu 2 vezes? Ótimo.']}
+  else{$('#mic').onclick=()=>{const r=new SR();r.lang=L.voz;r.interimResults=true;r.maxAlternatives=3;$('#mic').classList.add('on');
+   r.onresult=e=>{ouvido=[...e.results].map(x=>x[0].transcript).join(' ');$('#ouvi').textContent='“'+ouvido+'”';pronto(true)};
+   r.onerror=e=>{$('#ouvi').textContent='Não consegui ouvir ('+e.error+'). Tente de novo ou toque em "Não posso falar agora".'};
+   r.onend=()=>$('#mic').classList.remove('on');r.start()};
+   checar=()=>{const a=norm(it.texto).split(' '),b=new Set(norm(ouvido).split(' '));const n=a.filter(w=>b.has(w)).length/a.length;
+    return [n>=.7,it.texto,`Reconheci ${Math.round(n*100)}% das palavras.`]}}}
+}
+GO.onclick=()=>{
+ const it=fila[pos];
+ if(estado==='dica'||estado==='fb'){pos++;pos<fila.length?render():fim();return}
+ if(!checar)return;const [ok,certa,nota]=checar();estado='fb';
+ if(ok){if(!it._rev)acertos++;xp+=it._rev?5:10;$('#xp').textContent=xp+' XP';F.className='ok';
+  FB.innerHTML=`<b>${emb(['Muito bem!','Isso!','Perfeito!','Excelente!'])[0]}</b>${nota?`<p>${esc(nota)}</p>`:''}${it.explica?`<p>${esc(it.explica)}</p>`:''}`;}
+ else{F.className='err';FB.innerHTML=`<b>Resposta certa:</b>${certa?`<p>${esc(certa)}</p>`:''}${nota?`<p>${esc(nota)}</p>`:''}${it.explica?`<p>${esc(it.explica)}</p>`:''}`;
+  if(!it._rev&&!errados.has(it._i)){errados.add(it._i);erros.push(it.pergunta||it.texto||'pares');fila.push({...it,_rev:1})}}
+ if(it.tipo==='ouvir'||it.tipo==='falar')falar(it.texto);
+ GO.textContent='Continuar';PU.hidden=true};
+PU.onclick=()=>{pulados++;estado='fb';GO.click()};
+$('#sair').onclick=()=>{if(confirm('Recomeçar a lição?'))location.reload()};
+function fim(){
+ $('#prog').style.width='100%';const min=Math.max(1,Math.round((Date.now()-t0)/60000)),pct=Math.round(acertos/totalBase()*100);
+ const k='licoes-'+L.lingua,h=JSON.parse(localStorage.getItem(k)||'{}'),hoje=new Date().toISOString().slice(0,10);
+ h[L.id]={data:hoje,pct,xp,min};h._dias=[...new Set([...(h._dias||[]),hoje])];localStorage.setItem(k,JSON.stringify(h));
+ let seq=0;for(let d=new Date();h._dias.includes(d.toISOString().slice(0,10));d.setDate(d.getDate()-1))seq++;
+ const txt=`${L.id} · ${L.titulo}: ${pct}% de acerto, ${xp} XP, ${min} min.`+(erros.length?` Errei: ${erros.join(' | ')}`:' Sem erros.');
+ M.innerHTML=`<div class="fim"><div class="big">${pct>=90?'🏆':pct>=70?'🎉':'💪'}</div><h2>Lição concluída!</h2><p class="ex">${esc(L.titulo)}</p>
+ <div class="stats"><div><b>${xp}</b><span>XP</span></div><div><b>${pct}%</b><span>acerto</span></div><div><b>🔥 ${seq}</b><span>dia(s) seguidos</span></div></div>
+ ${erros.length?`<div class="erros"><b>Para revisar</b><ul>${erros.map(e=>`<li>${esc(e)}</li>`).join('')}</ul></div>`:''}
+ <p class="ex" style="margin-top:18px">Mande o resultado no grupo para eu registrar e montar a próxima lição em cima dos seus erros.</p></div>`;
+ GO.textContent='Copiar resultado para mandar';GO.disabled=false;F.className='';FB.innerHTML='';
+ GO.onclick=async()=>{try{if(navigator.share){await navigator.share({text:txt})}else{await navigator.clipboard.writeText(txt);GO.textContent='Copiado ✓'}}catch(e){prompt('Copie:',txt)}};}
+function totalBase(){return Math.max(1,L.itens.filter(x=>!['dica','leitura'].includes(x.tipo)).length-pulados)}
+render();
+</script></body></html>
