@@ -53,6 +53,7 @@ th{font-size:12px;text-transform:uppercase;letter-spacing:.06em;color:var(--mut)
 .licao .s{font-size:13px;color:var(--mut);margin-top:2px;display:block}
 .licao.feita .t{text-decoration:none}
 .licoes{margin:0}
+.aviso{border:1px solid color-mix(in srgb,var(--err) 45%,var(--line));background:var(--errbg);color:var(--err);border-radius:14px;padding:12px 14px;font-size:15px;margin:0 0 14px}
 @media(min-width:900px){
  .app{max-width:780px}
  .licoes{display:grid;grid-template-columns:1fr 1fr;gap:9px}
@@ -131,6 +132,7 @@ const CURSO = {"aluno": {"nome": "Rodolfo", "subtitulo": "Plano de inglês · 12
 /* ---------- armazenamento local ---------- */
 const CHAVE='curso-'+CURSO.aluno.chave;
 function lidos(){try{return JSON.parse(localStorage.getItem(CHAVE)||'{}')}catch(e){return {}}}
+function temArmazem(){try{localStorage.setItem('__t','1');localStorage.removeItem('__t');return true}catch(e){return false}}
 function gravar(id,reg){try{const h=lidos();h[id]=reg;h._dias=[...new Set([...(h._dias||[]),new Date().toISOString().slice(0,10)])];localStorage.setItem(CHAVE,JSON.stringify(h))}catch(e){}}
 const TOTAL=CURSO.licoes.length;
 /* ---------- home ---------- */
@@ -140,7 +142,7 @@ function pct(){const h=lidos();return Math.round(CURSO.licoes.filter(l=>h[l.id])
 function home(){
   document.getElementById('player').hidden=true;
   const HOME=$('#home');HOME.hidden=false;
-  const h=lidos(),p=pct(),feitas=CURSO.licoes.filter(l=>h[l.id]).length;
+  const h=lidos(),p=pct(),feitas=CURSO.licoes.filter(l=>h[l.id]).length,guarda=temArmazem();
   let seq=0;for(let d=new Date();(h._dias||[]).includes(d.toISOString().slice(0,10));d.setDate(d.getDate()-1))seq++;
   const P=CURSO.plano;
   HOME.innerHTML=`
@@ -152,6 +154,7 @@ function home(){
     <div class="prog"><div class="anel" style="--p:${p}"><span>${p}%</span></div>
       <div><b>${feitas} de ${TOTAL} lições</b><div class="ex">${seq>1?'🔥 '+seq+' dias seguidos':'Comece pela lição 01'}</div></div></div>
   </div>
+  ${guarda?'':'<div class="aviso"><b>Este navegador não está guardando o progresso.</b> O curso funciona igual, mas as lições feitas e os dias seguidos não ficam salvos quando você fechar a página. Para guardar, abra pelo link do curso.</div>'}
   ${P.secoes.map(s=>`<h2>${esc(s.titulo)}</h2>${s.html}`).join('')}
   <h2>O caminho</h2>
   ${CURSO.semanas.map((sem,si)=>{
