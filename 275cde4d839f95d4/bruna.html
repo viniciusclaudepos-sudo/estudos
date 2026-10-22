@@ -152,7 +152,7 @@ function home(){
   <p class="lead">${P.lead}</p>
   <div class="card">
     <div class="prog"><div class="anel" style="--p:${p}"><span>${p}%</span></div>
-      <div><b>${feitas} de ${TOTAL} lições</b><div class="ex">${seq>1?'🔥 '+seq+' dias seguidos':'Comece pela lição 01'}</div></div></div>
+      <div><b>${feitas} de ${TOTAL} lições</b><div class="ex">${seq>1?'🔥 '+seq+' dias seguidos':(feitas===TOTAL?'Você completou as '+TOTAL+' lições':feitas?'Continue de onde parou':'Comece pela lição 01')}</div></div></div>
   </div>
   ${guarda?'':'<div class="aviso"><b>Este navegador não está guardando o progresso.</b> O curso funciona igual, mas as lições feitas e os dias seguidos não ficam salvos quando você fechar a página. Para guardar, abra pelo link do curso.</div>'}
   ${P.secoes.map(s=>`<h2>${esc(s.titulo)}</h2>${s.html}`).join('')}
